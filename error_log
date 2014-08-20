@@ -1,0 +1,20 @@
+[16-Aug-2014 19:29:35] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required '/models/CRUD.model.php' (include_path='.:/usr/lib64/php:/usr/share/pear') in /home8/imobilus/public_html/index.php on line 3
+[16-Aug-2014 19:31:35] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:32:27] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:36:35] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:38:53] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:39:41] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:41:12] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:41:52] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:42:26] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:42:48] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 30
+[16-Aug-2014 19:43:16] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 30
+[16-Aug-2014 19:43:29] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 30
+[16-Aug-2014 19:44:00] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 30
+[16-Aug-2014 19:44:17] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 30
+[16-Aug-2014 19:44:33] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 30
+[16-Aug-2014 19:44:59] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 30
+[16-Aug-2014 19:45:13] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 31
+[16-Aug-2014 19:45:43] PHP Fatal error:  Using $this when not in object context in /home8/imobilus/public_html/etc/class/Email.class.php on line 30
+[16-Aug-2014 19:48:22] PHP Fatal error:  Call to undefined function  enviaremail() in /home8/imobilus/public_html/etc/class/Email.class.php on line 26
+[16-Aug-2014 19:49:44] PHP Fatal error:  Call to undefined function  enviaremail() in /home8/imobilus/public_html/etc/class/Email.class.php on line 26
