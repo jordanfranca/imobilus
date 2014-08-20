@@ -1,0 +1,274 @@
+# AdwCleaner v2.301 - Logfile created 06/06/2013 at 10:59:37
+# Updated 16/05/2013 by Xplode
+# Operating system : Windows 7 Ultimate Service Pack 1 (64 bits)
+# User : Jordã - JORDA-PC
+# Boot Mode : Normal
+# Running from : C:\Users\Jordã\Downloads\adwcleaner.exe
+# Option [Delete]
+
+
+***** [Services] *****
+
+Stopped & Deleted : IBUpdaterService
+Stopped & Deleted : SrvUpdater
+
+***** [Files / Folders] *****
+
+File Deleted : C:\Users\Jordã\AppData\Roaming\Mozilla\Firefox\Profiles\19392krb.default\extensions\{EEE6C361-6118-11DC-9C72-001320C79847}.xpi
+File Deleted : C:\Users\Jordã\AppData\Roaming\Mozilla\Firefox\Profiles\19392krb.default\searchplugins\Web Search.xml
+Folder Deleted : C:\Program Files (x86)\SweetIM
+Folder Deleted : C:\Program Files (x86)\sweetpacks bundle uninstaller
+Folder Deleted : C:\ProgramData\APN
+Folder Deleted : C:\ProgramData\Ask
+Folder Deleted : C:\ProgramData\SweetIM
+Folder Deleted : C:\Users\JORD~1\AppData\Local\Temp\Smartbar
+Folder Deleted : C:\Users\Jordã\AppData\Local\Smartbar
+Folder Deleted : C:\Users\Jordã\AppData\Local\SwvUpdater
+Folder Deleted : C:\Users\Jordã\AppData\LocalLow\Smartbar
+Folder Deleted : C:\Users\Jordã\AppData\LocalLow\Toolbar4
+Folder Deleted : C:\Users\Jordã\AppData\Roaming\Mozilla\Firefox\Profiles\19392krb.default\jetpack
+Folder Deleted : C:\Windows\Installer\{A0C9DF2B-89B5-4483-8983-18A68200F1B4}
+Folder Deleted : C:\Windows\SysWOW64\WNLT
+
+***** [Registry] *****
+
+Key Deleted : HKCU\Software\APN PIP
+Key Deleted : HKCU\Software\IM
+Key Deleted : HKCU\Software\ImInstaller
+Key Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Ext\Settings\{31AD400D-1B06-4E33-A59A-90C2C140CBA0}
+Key Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Ext\Settings\{AE07101B-46D4-4A98-AF68-0333EA26E113}
+Key Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Ext\Settings\{EEE6C35B-6118-11DC-9C72-001320C79847}
+Key Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Ext\Settings\{EEE6C35C-6118-11DC-9C72-001320C79847}
+Key Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Ext\Stats\{31AD400D-1B06-4E33-A59A-90C2C140CBA0}
+Key Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Ext\Stats\{AE07101B-46D4-4A98-AF68-0333EA26E113}
+Key Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Ext\Stats\{EEE6C35B-6118-11DC-9C72-001320C79847}
+Key Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Ext\Stats\{EEE6C35C-6118-11DC-9C72-001320C79847}
+Key Deleted : HKCU\Software\PIP
+Key Deleted : HKCU\Software\SmartBar
+Key Deleted : HKCU\Software\SmartbarBackup
+Key Deleted : HKCU\Software\SmartbarLog
+Key Deleted : HKCU\Software\WNLT
+Key Deleted : HKCU\Software\Microsoft\Internet Explorer\SearchScopes\{006EE092-9658-4FD6-BD8E-A21A348E59F5}
+Key Deleted : HKLM\SOFTWARE\Classes\IESmartBar.BandObjectAttribute
+Key Deleted : HKLM\SOFTWARE\Classes\IESmartBar.BHO
+Key Deleted : HKLM\SOFTWARE\Classes\IESmartBar.DockingPanel
+Key Deleted : HKLM\SOFTWARE\Classes\IESmartBar.IESmartBar
+Key Deleted : HKLM\SOFTWARE\Classes\IESmartBar.IESmartBarBandObject
+Key Deleted : HKLM\SOFTWARE\Classes\IESmartBar.SmartbarDisplayState
+Key Deleted : HKLM\SOFTWARE\Classes\IESmartBar.SmartbarMenuForm
+Key Deleted : HKLM\Software\Classes\Installer\Features\B2FD9C0A5B9838449838816A28001F4B
+Key Deleted : HKLM\Software\Classes\Installer\Features\EB6AF8AEEB922FA4392548F13812E50B
+Key Deleted : HKLM\Software\Classes\Installer\Products\B2FD9C0A5B9838449838816A28001F4B
+Key Deleted : HKLM\Software\Classes\Installer\Products\EB6AF8AEEB922FA4392548F13812E50B
+Key Deleted : HKLM\SOFTWARE\Classes\MediaPlayer.GraphicsUtils
+Key Deleted : HKLM\SOFTWARE\Classes\MediaPlayer.GraphicsUtils.1
+Key Deleted : HKLM\SOFTWARE\Classes\MgMediaPlayer.GifAnimator
+Key Deleted : HKLM\SOFTWARE\Classes\MgMediaPlayer.GifAnimator.1
+Key Deleted : HKLM\SOFTWARE\Classes\sim-packages
+Key Deleted : HKLM\SOFTWARE\Classes\SWEETIE.IEToolbar
+Key Deleted : HKLM\SOFTWARE\Classes\SWEETIE.IEToolbar.1
+Key Deleted : HKLM\SOFTWARE\Classes\sweetim_urlsearchhook.toolbarurlsearchhook
+Key Deleted : HKLM\SOFTWARE\Classes\sweetim_urlsearchhook.toolbarurlsearchhook.1
+Key Deleted : HKLM\SOFTWARE\Classes\Toolbar3.sweetie
+Key Deleted : HKLM\SOFTWARE\Classes\Toolbar3.sweetie.1
+Key Deleted : HKLM\SOFTWARE\Classes\TypeLib\{2BF2028E-3F3C-4C05-AB45-B2F1DCFE0759}
+Key Deleted : HKLM\SOFTWARE\Classes\TypeLib\{4D3B167E-5FD8-4276-8FD7-9DF19C1E4D19}
+Key Deleted : HKLM\SOFTWARE\Classes\TypeLib\{A0EE0278-2986-4E5A-884E-A3BF0357E476}
+Key Deleted : HKLM\SOFTWARE\Classes\TypeLib\{DB538320-D3C5-433C-BCA9-C4081A054FCF}
+Key Deleted : HKLM\SOFTWARE\Classes\TypeLib\{EEE6C35E-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Classes\TypeLib\{EEE6C35F-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Classes\Updater.AmiUpd
+Key Deleted : HKLM\SOFTWARE\Classes\Updater.AmiUpd.1
+Key Deleted : HKLM\Software\Iminent
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\BundleSweetIMSetup_RASAPI32
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\BundleSweetIMSetup_RASMANCS
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\Iminent_RASAPI32
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\Iminent_RASMANCS
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\SnapDo_RASAPI32
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\SnapDo_RASMANCS
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\SweetIM_RASAPI32
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\SweetIM_RASMANCS
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\SweetPacksUpdateManager_RASAPI32
+Key Deleted : HKLM\SOFTWARE\Microsoft\Tracing\SweetPacksUpdateManager_RASMANCS
+Key Deleted : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\SweetIM.exe
+Key Deleted : HKLM\Software\PIP
+Key Deleted : HKLM\Software\SoftwareUpdater
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{02054E11-5113-4BE3-8153-AA8DFB5D3761}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{31AD400D-1B06-4E33-A59A-90C2C140CBA0}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{56561B2A-FB5D-363A-9631-4C03D6054209}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{67BD9EEB-AA06-4329-A940-D250019300C9}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{82AC53B4-164C-4B07-A016-437A8388B81A}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{A4A0CB15-8465-4F58-A7E5-73084EA2A064}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{A717364F-69F3-3A24-ADD5-3901A57F880E}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{AE07101B-46D4-4A98-AF68-0333EA26E113}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{CCB08265-B35D-30B2-A6AF-6986CA957358}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{CD92622E-49B9-33B7-98D1-EC51049457D7}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{E041E037-FA4B-364A-B440-7A1051EA0301}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{EEE6C35B-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{EEE6C35C-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\CLSID\{EEE6C35D-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{021B4049-F57D-4565-A693-FD3B04786BFA}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{0362AA09-808D-48E9-B360-FB51A8CBCE09}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{06844020-CD0B-3D3D-A7FE-371153013E49}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{0ADC01BB-303B-3F8E-93DA-12C140E85460}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{10D3722F-23E6-3901-B6C1-FF6567121920}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{1675E62B-F911-3B7B-A046-EB57261212F3}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{192929F2-9273-3894-91B0-F54671C4C861}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{2932897E-3036-43D9-8A64-B06447992065}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{2DE92D29-A042-3C37-BFF8-07C7D8893EFA}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{32B80AD6-1214-45F4-994E-78A5D482C000}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{3A8E103F-B2B7-3BEF-B3B0-88E29B2420E4}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{478CE5D3-D38E-3FFE-8DBE-8C4A0F1C4D8D}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{48B7DA4E-69ED-39E3-BAD5-3E3EFF22CFB0}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{5982F405-44E4-3BBB-BAC4-CF8141CBBC5C}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{5D8C3CC3-3C05-38A1-B244-924A23115FE9}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{641593AF-D9FD-30F7-B783-36E16F7A2E08}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{711FC48A-1356-3932-94D8-A8B733DBC7E4}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{72227B7F-1F02-3560-95F5-592E68BACC0C}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{7B5E8CE3-4722-4C0E-A236-A6FF731BEF37}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{890D4F59-5ED0-3CB4-8E0E-74A5A86E7ED0}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{8C68913C-AC3C-4494-8B9C-984D87C85003}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{8D019513-083F-4AA5-933F-7D43A6DA82C4}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{923F6FB8-A390-370E-A0D2-DD505432481D}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{9BBB26EF-B178-35D6-9D3D-B485F4279FE5}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{9EDC0C90-2B5B-4512-953E-35767BAD5C67}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{A439801C-961D-452C-AB42-7848E9CBD289}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{A62DDBE0-8D2A-339A-B089-8CBCC5CD322A}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{A82AD04D-0B8E-3A49-947B-6A69A8A9C96D}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{ADEB3CC9-A05D-4FCC-BD09-9025456AA3EA}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{B06D4521-D09C-3F41-8E39-9D784CCA2A75}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{C06DAD42-6F39-4CE1-83CC-9A8B9105E556}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{C2E799D0-43A5-3477-8A98-FC5F3677F35C}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{D16107CD-2AD5-46A8-BA59-303B7C32C500}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{D25B101F-8188-3B43-9D85-201F372BC205}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{D2BA7595-5E44-3F1E-880F-03B3139FA5ED}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{D35F5C81-17D9-3E1C-A1FC-4472542E1D25}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{D8FA96CA-B250-312C-AF34-4FF1DD72589D}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{DAFC1E63-3359-416D-9BC2-E7DCA6F7B0F3}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{DC5E5C44-80FD-3697-9E65-9F286D92F3E7}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{E1B4C9DE-D741-385F-981E-6745FACE6F01}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{E7B623F5-9715-3F9F-A671-D1485A39F8A2}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{ED916A7B-7C68-3198-B87D-2DABC30A5587}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{EEE6C358-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{EEE6C359-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{EEE6C35A-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{EFA1BDB2-BB3D-3D9A-8EB5-D0D22E0F64F4}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{F4CBF4DD-F8FE-35BA-BB7E-68304DAAB70B}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{F4EBB1E2-21F3-4786-8CF4-16EC5925867F}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Classes\Interface\{FC32005D-E27C-32E0-ADFA-152F598B75E7}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Google\Chrome\Extensions\ogccgbmabaphcakpiclgcnmcnimhokcj
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\{628F3201-34D0-49C0-BB9A-82A26AEFB291}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\{68B81CCD-A80C-4060-8947-5AE69ED01199}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\{E6B969FB-6D33-48D2-9061-8BBD4899EB08}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Low Rights\ElevationPolicy\{EEE6C367-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\SearchScopes\{006EE092-9658-4FD6-BD8E-A21A348E59F5}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\{31AD400D-1B06-4E33-A59A-90C2C140CBA0}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\{EEE6C35C-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{96E2E493-C484-43E3-9B95-D62EE7D40D3A}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{99C91FC5-DB5B-4AA0-BB70-5D89C5A4DF96}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{A0C9DF2B-89B5-4483-8983-18A68200F1B4}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{EA8FA6BE-29BE-4AF2-9352-841F83215EB0}
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\SearchTheWebARP
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\SoftwareUpdater
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\SweetIM Bundle by SweetPacks
+Key Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\WNLT
+Key Deleted : HKLM\SOFTWARE\Classes\CLSID\{31AD400D-1B06-4E33-A59A-90C2C140CBA0}
+Key Deleted : HKLM\SOFTWARE\Classes\CLSID\{56561B2A-FB5D-363A-9631-4C03D6054209}
+Key Deleted : HKLM\SOFTWARE\Classes\CLSID\{A717364F-69F3-3A24-ADD5-3901A57F880E}
+Key Deleted : HKLM\SOFTWARE\Classes\CLSID\{AE07101B-46D4-4A98-AF68-0333EA26E113}
+Key Deleted : HKLM\SOFTWARE\Classes\CLSID\{CCB08265-B35D-30B2-A6AF-6986CA957358}
+Key Deleted : HKLM\SOFTWARE\Classes\CLSID\{CD92622E-49B9-33B7-98D1-EC51049457D7}
+Key Deleted : HKLM\SOFTWARE\Classes\CLSID\{E041E037-FA4B-364A-B440-7A1051EA0301}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{021B4049-F57D-4565-A693-FD3B04786BFA}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{0362AA09-808D-48E9-B360-FB51A8CBCE09}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{06844020-CD0B-3D3D-A7FE-371153013E49}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{0ADC01BB-303B-3F8E-93DA-12C140E85460}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{10D3722F-23E6-3901-B6C1-FF6567121920}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{1675E62B-F911-3B7B-A046-EB57261212F3}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{192929F2-9273-3894-91B0-F54671C4C861}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{2932897E-3036-43D9-8A64-B06447992065}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{2DE92D29-A042-3C37-BFF8-07C7D8893EFA}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{32B80AD6-1214-45F4-994E-78A5D482C000}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{3A8E103F-B2B7-3BEF-B3B0-88E29B2420E4}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{478CE5D3-D38E-3FFE-8DBE-8C4A0F1C4D8D}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{48B7DA4E-69ED-39E3-BAD5-3E3EFF22CFB0}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{5982F405-44E4-3BBB-BAC4-CF8141CBBC5C}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{5D8C3CC3-3C05-38A1-B244-924A23115FE9}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{641593AF-D9FD-30F7-B783-36E16F7A2E08}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{711FC48A-1356-3932-94D8-A8B733DBC7E4}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{72227B7F-1F02-3560-95F5-592E68BACC0C}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{7B5E8CE3-4722-4C0E-A236-A6FF731BEF37}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{890D4F59-5ED0-3CB4-8E0E-74A5A86E7ED0}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{8C68913C-AC3C-4494-8B9C-984D87C85003}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{8D019513-083F-4AA5-933F-7D43A6DA82C4}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{923F6FB8-A390-370E-A0D2-DD505432481D}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{9BBB26EF-B178-35D6-9D3D-B485F4279FE5}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{9EDC0C90-2B5B-4512-953E-35767BAD5C67}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{A62DDBE0-8D2A-339A-B089-8CBCC5CD322A}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{A82AD04D-0B8E-3A49-947B-6A69A8A9C96D}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{ADEB3CC9-A05D-4FCC-BD09-9025456AA3EA}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{B06D4521-D09C-3F41-8E39-9D784CCA2A75}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{C06DAD42-6F39-4CE1-83CC-9A8B9105E556}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{C2E799D0-43A5-3477-8A98-FC5F3677F35C}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{D16107CD-2AD5-46A8-BA59-303B7C32C500}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{D25B101F-8188-3B43-9D85-201F372BC205}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{D2BA7595-5E44-3F1E-880F-03B3139FA5ED}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{D35F5C81-17D9-3E1C-A1FC-4472542E1D25}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{D8FA96CA-B250-312C-AF34-4FF1DD72589D}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{DAFC1E63-3359-416D-9BC2-E7DCA6F7B0F3}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{DC5E5C44-80FD-3697-9E65-9F286D92F3E7}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{E1B4C9DE-D741-385F-981E-6745FACE6F01}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{E7B623F5-9715-3F9F-A671-D1485A39F8A2}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{ED916A7B-7C68-3198-B87D-2DABC30A5587}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{EEE6C358-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{EEE6C359-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{EEE6C35A-6118-11DC-9C72-001320C79847}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{EFA1BDB2-BB3D-3D9A-8EB5-D0D22E0F64F4}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{F4CBF4DD-F8FE-35BA-BB7E-68304DAAB70B}
+Key Deleted : HKLM\SOFTWARE\Classes\Interface\{FC32005D-E27C-32E0-ADFA-152F598B75E7}
+Key Deleted : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\{31AD400D-1B06-4E33-A59A-90C2C140CBA0}
+Value Deleted : HKCU\Software\Microsoft\Windows\CurrentVersion\Run [Browser Infrastructure Helper]
+Value Deleted : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run [SweetIM]
+Value Deleted : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run [Sweetpacks Communicator]
+Value Deleted : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SharedDLLs [C:\Program Files (x86)\SweetIM\Toolbars\Internet Explorer\mgHelperApp.exe]
+Value Deleted : HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SharedDLLs [C:\Program Files (x86)\SweetIM\Toolbars\Internet Explorer\mgToolbarProxy.dll]
+Value Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Toolbar [{AE07101B-46D4-4A98-AF68-0333EA26E113}]
+Value Deleted : HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Toolbar [{EEE6C35B-6118-11DC-9C72-001320C79847}]
+Value Deleted : HKLM\SOFTWARE\Microsoft\Internet Explorer\Toolbar [{AE07101B-46D4-4A98-AF68-0333EA26E113}]
+
+***** [Internet Browsers] *****
+
+-\\ Internet Explorer v10.0.9200.16576
+
+Replaced : [HKCU\Software\Microsoft\Internet Explorer\Main - Search Page] = hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb658cc-608c-43a6-939c-fa9042998811&searchtype=ds&q={searchTerms}&installDate=31/05/2013 --> hxxp://www.google.com
+Replaced : [HKCU\Software\Microsoft\Internet Explorer\Main - Start Page] = hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb658cc-608c-43a6-939c-fa9042998811&searchtype=hp&installDate=31/05/2013 --> hxxp://www.google.com
+Replaced : [HKCU\Software\Microsoft\Internet Explorer\Main - Search Bar] = hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb658cc-608c-43a6-939c-fa9042998811&searchtype=ds&q={searchTerms}&installDate=31/05/2013 --> hxxp://www.google.com
+Replaced : [HKCU\Software\Microsoft\Internet Explorer\Search - Default_Search_URL] = hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb658cc-608c-43a6-939c-fa9042998811&searchtype=ds&q={searchTerms}&installDate=31/05/2013 --> hxxp://www.google.com
+Replaced : [HKCU\Software\Microsoft\Internet Explorer\Search - SearchAssistant] = hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb658cc-608c-43a6-939c-fa9042998811&searchtype=ds&q={searchTerms}&installDate=31/05/2013 --> hxxp://www.google.com
+Replaced : [HKCU\Software\Microsoft\Internet Explorer\SearchUrl - Default] = hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb658cc-608c-43a6-939c-fa9042998811&searchtype=ds&q={searchTerms}&installDate=31/05/2013 --> hxxp://www.google.com
+Replaced : [HKLM\SOFTWARE\Microsoft\Internet Explorer\SearchUrl - Default] = hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb658cc-608c-43a6-939c-fa9042998811&searchtype=ds&q={searchTerms}&installDate=31/05/2013 --> hxxp://www.google.com
+
+-\\ Mozilla Firefox v21.0 (pt-BR)
+
+File : C:\Users\Jordã\AppData\Roaming\Mozilla\Firefox\Profiles\19392krb.default\prefs.js
+
+Deleted : user_pref("browser.newtab.url", "hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb6[...]
+Deleted : user_pref("extensions.greasemonkey.scriptvals.unfriend_finder/Unfriend Finder.1840299541_friends", "[...]
+Deleted : user_pref("extensions.helperbar.SmartbarDisabled", true);
+Deleted : user_pref("extensions.helperbar.SmartbarStateMinimaized", false);
+Deleted : user_pref("keyword.URL", "hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&userid=8eb658cc-60[...]
+Deleted : user_pref("sweetim.toolbar.previous.browser.startup.homepage", "hxxp://www.uol.com.br");
+Deleted : user_pref("sweetim.toolbar.urls.homepage", "hxxp://home.sweetim.com/?crg=3.1010000.10005");
+
+-\\ Google Chrome v27.0.1453.110
+
+File : C:\Users\Jordã\AppData\Local\Google\Chrome\User Data\Default\Preferences
+
+Deleted [l.2917] : urls_to_restore_on_startup = [ "hxxp://feed.snap.do/?publisher=Somoto&dpid=Somoto&co=BR&useri[...]
+
+*************************
+
+AdwCleaner[R1].txt - [22088 octets] - [06/06/2013 10:58:48]
+AdwCleaner[S1].txt - [22641 octets] - [06/06/2013 10:59:37]
+
+########## EOF - C:\AdwCleaner[S1].txt - [22702 octets] ##########
