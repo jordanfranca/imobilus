@@ -3,6 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title><?php echo $strTitulo.$strPagina; ?></title>
+
 		<!-- Meta tags -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,11 +13,40 @@
     	<meta name="keywords" content="" />
     	<meta name="description" content="" />
     	<meta name="abstract" content="" />
+
+        <!-- Fontes -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+
+        <!-- Outros CSS -->
+        <link rel="stylesheet" href="/web/css/foundation.css" />
+        <link rel="stylesheet/less" type="text/less" href="/web/css/style.less">
+
     	<!-- JavaScripts -->
+        <script src="/web/js/foundation.min.js"></script>
+        <script src="/web/js/easing-pack.js"></script>
+        <script src="/web/js/less.js"></script>
+        <script src="/web/js/script.js"></script>
+
     	<!-- FavIcon -->
     	<link rel="shortcut icon" href="/img/favicon.png">
-        <!-- Outros CSS -->
-        <link href="/css/estilo.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 	<!-- Header html -->
+
+    <header class="large-12 medium-12 small-12 left" id="header-top">
+        <div class="row">
+            <a href="/" id="logo-imobilus-header">
+                <h3>Imobilus</h3>
+                <h6>Fábrica de sistemas imobiliários.</h6>
+            </a>
+                <nav id="menu-header">
+                    <ul>
+                        <li><a href="/">Home</a><span></span></li>
+                        <li><a href="/cadastro">Cadastro</a><span></span></li>
+                        <li><a href="/templates">Templates</a><span></span></li>
+                        <li><a href="/contato">Contato</a><span></span></li>
+                        <li><a href="/login">Acessar</a><span></span></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>

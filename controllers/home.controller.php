@@ -20,10 +20,6 @@
 			
 		}
 		
-		public function cadastrar() {
-			require("views/cadastro/cadastro.view.php");
-		}
-		
 		public function consultarId () {
 			$objCadastro = new Cadastro();
 			$objCadastro->setIntCodigo($_POST['id']);

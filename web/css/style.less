@@ -1,0 +1,295 @@
+body{
+	margin:0px;
+	padding:0px;
+	-webkit-font-smoothing:antialiased;
+	overflow-x:hidden;
+}
+
+// classes principais
+
+.relative{
+	position:relative !important;
+}
+.easeOutQuart(@time: 500ms){
+    -webkit-transition: all @time cubic-bezier(0.165, 0.840, 0.440, 1.000); 
+    -moz-transition: all @time cubic-bezier(0.165, 0.840, 0.440, 1.000); 
+    -o-transition: all @time cubic-bezier(0.165, 0.840, 0.440, 1.000); 
+    transition: all @time cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+
+    -webkit-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000); 
+    -moz-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000); 
+    -o-transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000); 
+    transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+}
+.Roboto(@size: 1em){
+	font-family:'Roboto Condensed', sans-serif;
+	font-size:@size;
+}
+
+
+header#header-top{
+	background-color:#E7F1F8;
+	border-top:3px solid #16226a;
+
+	#logo-imobilus-header{
+		padding-top:0.5em;
+		padding-bottom:0.5em;
+		float:left;
+
+		h3{
+			.Roboto (2.5em);
+			margin:0px;
+			float:left;
+			font-weight:800;
+			line-height:1em;
+		}
+
+		h6{
+			.Roboto;
+			margin:0px;
+			float:left;
+			clear:both;
+		}
+	}
+}
+nav#menu-header{
+	float:right;
+	overflow:hidden;
+
+	ul{
+		margin:0px;
+		padding:0px;
+		list-style:none;
+
+		li{
+			float:left;
+			.relative;
+			.easeOutQuart;
+
+			a{
+				.Roboto(1.2em);
+				color:#16226a;
+				float:left;
+				position:relative;
+				z-index:1;
+				line-height:1em;
+				padding:1.53em 1em;
+			}
+
+			span{
+				width:100%;
+				height:100%;
+				background-color:#16226a;
+				position:absolute;
+				top:-78px;
+				left:0px;
+				.easeOutQuart(300ms);
+			}
+
+			&:hover{
+
+				a{
+					color:#fff;
+				}
+
+				span{
+					top:0px;
+					.easeOutQuart(300ms);
+				}
+			}
+		}
+	}
+}
+section#slider-main{
+	position:relative;
+
+	#slider{
+		height:350px;
+
+		ul{
+			margin:0px;
+			padding:0px;
+			list-style:none;
+
+			li{
+				width:100%;
+				height:auto;
+				position:absolute;
+				display:none;
+
+				&:first-child{
+					display:block;
+				}
+
+				.shadow-slider{
+					width:100%;
+					height:350px;
+					position:absolute;
+					background-color:rgba(0, 0, 0, 0.5);
+				}
+
+				img{
+					width:100%;
+					height:350px;
+					float:left;
+				}
+			}
+		}
+	}
+}
+#controls{
+	position:absolute;
+	z-index:3;
+	bottom:15px;
+	left:50%;
+	margin-left:-28px;
+	text-align:center;
+
+	ul{
+		margin:0px;
+		padding:0px;
+		list-style:none;
+
+		li{
+			width:14px;
+			height:14px;
+			border-radius:10px;
+			float:left;
+			margin-right:5px;
+			background-color:#fff;
+			cursor:pointer;
+
+			&:hover{
+				background-color:#16226a;
+			}
+		}
+	}
+}
+
+section#questions-main{
+	padding-top:2em;
+	padding-bottom:5em;
+
+	#questions{
+		float:left;
+
+		ul{
+			margin:0px;
+			padding:0px;
+			list-style:none;
+
+			li{
+				height:64px;
+				overflow:hidden;
+				float:left;
+				text-align:center;
+
+				h2{
+					.Roboto(2em);
+					font-weight:800;
+					float:left;
+					color:#5f5f5f;
+					line-height:1em;
+					cursor:pointer;
+					.easeOutQuart(300ms);
+
+					&:hover{
+						.easeOutQuart(300ms);
+						color:#16226a;
+					}
+				}
+
+				.answer{
+					clear:both;
+					float:left;
+					margin-bottom:1.5em;
+					.Roboto (0.9em);
+					line-height:1.7em;
+					color:#928e92;
+				}
+
+				hr{
+					width:70%;
+					margin:0 auto;
+				}
+
+				.more-link{
+					display:inline-block;
+					margin-top:0.5em;
+					.Roboto(0.7em);
+					padding:0.2em;
+					text-transform:uppercase;
+					color:#000;
+					line-height:1em;
+					.easeOutQuart;
+
+					&:hover{
+						.easeOutQuart;
+						color:#928e92;
+						background-color:#ccc;
+						border-radius:2px;
+					}
+				}
+			}
+		}
+	}
+}
+
+section#cadastrar-main{
+	background-color:#F5F0F5;
+	border-top:1px solid #5f5f5f;
+}
+#cadastro{
+	margin-top:1em;
+	padding-bottom:0.5em;
+
+	h3{
+		.Roboto(1.5em);
+		margin:0px;
+		color:#5f5f5f;
+		font-weight:800;
+		display:inline-block;
+		margin-top:1em;
+		margin-bottom:1em;
+	}
+
+	form{
+
+		input{
+			.Roboto(1.2em);
+			color:#928e92;
+			border:none;
+			box-shadow:none;
+			outline:none;
+			border:1px solid #928e92;
+			border-radius:2px;
+			margin-bottom:0em;
+		}
+
+		.button-form{
+			.easeOutQuart;
+
+			&:hover{
+				.easeOutQuart;
+				background-color:#16226a;
+				color:#fff;
+				cursor:pointer;
+			}
+		}
+	}
+
+	span{
+		.Roboto(1em);
+		color:#928e92;
+		display:inline-block;
+		margin-right:0.5em;
+	}
+}
+.forgot-password{
+	.Roboto(1em);
+	color:#16226a !important;
+
+	&:hover{
+		text-decoration:underline;
+	}
+}

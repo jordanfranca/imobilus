@@ -18,7 +18,7 @@
 
 	//Logica das páginas
 	$strAtual       = (isset($_GET['pg'])) ? $_GET['pg'] : 'home';
-	$arrPermissao   = array('home');
+	$arrPermissao   = array('home', 'cadastro', 'login');
 	$strPasta       = 'controllers';
 	if(substr_count($strAtual, '/') > 0) {
 		$strAtual   = explode('/',$strAtual);
@@ -26,8 +26,8 @@
 	}
 	else
 		$strPagina  = (file_exists("{$strPasta}/".$strAtual.'.controller.php') && in_array($strAtual, $arrPermissao)) ? $strAtual : 'erro';
-
 	//Lógica de Metodos
+	
 	$strMetodo       = ((isset($strAtual[1])) && (strlen($strAtual[1]) > 1)) ? $strAtual[1] : 'index';
 	//Header
 	require("views/header.view.php");
