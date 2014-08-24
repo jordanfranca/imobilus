@@ -85,6 +85,35 @@
 			
 		}
 		
+		public function getCadastroByEmail() {
+			$objConexao = Cadastro::getConexao();
+			$objConsulta = $objConexao->prepare("SELECT  DSC_LOGIN,
+										  DSC_SENHA,
+										  NUM_CRECI,
+										  DSC_EMAIL,
+										  NOM_USUARIO,
+										  DSC_HASH
+										  FROM
+										  tb_cadastros
+										  WHERE DSC_EMAIL = :str_email
+			");
+			$objConsulta->bindValue("str_email", $this->getStrEmail(), PDO::PARAM_STR);
+			$objRetorno = parent::Read($objConsulta);
+			if($objRetorno->rowCount() > 0) {
+				foreach ($objRetorno->fetchAll() as $arrResult) {
+					self::setIntCreci($arrResult['NUM_CRECI']);
+					self::setStrEmail($arrResult['DSC_EMAIL']);
+					self::setStrHash($arrResult['DSC_HASH']);
+					self::setStrLogin($arrResult['DSC_LOGIN']);
+					self::setStrNome($arrResult['NOM_USUARIO']);
+					self::setStrSenha($arrResult['DSC_SENHA']);
+				}
+				return true;
+			}
+			else
+				return false;
+		}
+		
 		public function getCadastro() {
 			$objConexao = Cadastro::getConexao();
 			$objConsulta = $objConexao->prepare("SELECT  DSC_LOGIN,
@@ -112,6 +141,14 @@
 			}
 			else 
 				return false;
+		}
+		
+		public function confirmaCadastro() {
+			$objConexao = Cadastro::getConexao();
+			$objUpdate = $objConexao->prepare("UPDATE tb_cadastros SET IND_CONFIRMADO = 1, IND_ATIVO = 1 WHERE DSC_EMAIL = :dsc_email");
+			$objUpdate->bindValue("dsc_email", $this->getStrEmail(), PDO::PARAM_STR);
+			$objRetorno = parent::Update($objUpdate);
+			return $objRetorno;
 		}
 		
 		private static function getConexao() {

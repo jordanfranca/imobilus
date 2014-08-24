@@ -24,6 +24,30 @@
 				
 		}
 		
+		public function confirmacao() {
+			//Pegando inputs
+			$strHash = $_GET['cod'];
+			$strEmail = $_GET['email'];
+			
+			//Obj de Cadastro
+			$objCadastro = new Cadastro();
+			$objCadastro->setStrEmail($strEmail);
+			$boolCadastro = $objCadastro->getCadastroByEmail();
+			if($boolCadastro) {
+				if($objCadastro->getStrHash() == $strHash) {
+					$boolCadastro = $objCadastro->confirmaCadastro();
+					if($boolCadastro) 
+						echo 'Cadastro confirmado';
+					else 
+						echo 'Ocorreu um erro, tente novamente!';	
+				}
+				else 
+					echo 'Código de confirmação incorreto!';
+			}
+			else 
+				echo 'Cadastro não encontrado';
+		}
+		
 		public function consultarId () {
 			$objCadastro = new Cadastro();
 			$objCadastro->setIntCodigo($_POST['id']);

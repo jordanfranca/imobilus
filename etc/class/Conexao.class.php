@@ -31,7 +31,7 @@
 		}
 		
 		public function Update(PDOStatement $objUpdate) {
-			$objUpdate->execute();
+			return $objUpdate->execute();
 		}
 		
 		public function Delete(PDOStatement $objDelete) {
