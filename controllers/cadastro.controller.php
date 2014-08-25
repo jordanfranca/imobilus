@@ -2,6 +2,7 @@
 
 	class CadastroController extends Page{
 		public function index() {
+			$intConfirma = 0;
 			require("views/cadastro/cadastro.view.php");
 		}
 	
@@ -36,17 +37,17 @@
 			if($boolCadastro) {
 				if($objCadastro->getStrHash() == $strHash) {
 					$boolCadastro = $objCadastro->confirmaCadastro();
-					if($boolCadastro) 
-						//Confirmado
-						header('Location: /login/&confirma=1');
+					if($boolCadastro)
+						$intConfirma = 1;
 					else 
-						header('Location: /login/&confirma=2');
+						$intConfirma = 2;
 				}
 				else 
-					header('Location: /login/&confirma=2');
+					$intConfirma = 2;
 			}
 			else 
-				header('Location: /login/&confirma=3');
+				$intConfirma = 3;
+			require('views/cadastro/cadastro.view.php');
 		}
 		
 		public function consultarId () {
