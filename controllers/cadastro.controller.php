@@ -37,15 +37,16 @@
 				if($objCadastro->getStrHash() == $strHash) {
 					$boolCadastro = $objCadastro->confirmaCadastro();
 					if($boolCadastro) 
-						echo 'Cadastro confirmado';
+						//Confirmado
+						header('Location: /login/&confirma=1');
 					else 
-						echo 'Ocorreu um erro, tente novamente!';	
+						header('Location: /login/&confirma=2');
 				}
 				else 
-					echo 'Código de confirmação incorreto!';
+					header('Location: /login/&confirma=2');
 			}
 			else 
-				echo 'Cadastro não encontrado';
+				header('Location: /login/&confirma=3');
 		}
 		
 		public function consultarId () {

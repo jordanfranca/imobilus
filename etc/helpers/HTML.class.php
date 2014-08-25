@@ -10,4 +10,15 @@
 			';
 			return $strCombo;
 		}
+		
+		//Retorna Mensagens padrões
+		//Tipos de mensagem: 'sucess', 'warning', 'info', 'alert', 'secondary'
+		public static function mesageDefault($strMesage, $strType) {
+			return $strHtml = '
+				<div data-alert class="alert-box '.$strType.' radius">
+				  '.$strMesage.'
+				  <a href="#" class="close">&times;</a>
+				</div>		
+			';
+		}
 	}

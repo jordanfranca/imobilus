@@ -26,7 +26,6 @@
         <script src="/web/js/easing-pack.js"></script>
         <script src="/web/js/less.js"></script>
         <script src="/web/js/script.js"></script>
-
     	<!-- FavIcon -->
     	<link rel="shortcut icon" href="/img/favicon.png">
 	</head>
@@ -36,15 +35,14 @@
     <header class="large-12 medium-12 small-12 left" id="header-top">
         <div class="row">
             <a href="/" id="logo-imobilus-header">
-                <h3>Imobilus</h3>
-                <h6>Fábrica de sistemas imobiliários.</h6>
+                <img src="/web/img/logo.png" alt="Imóbilus">
             </a>
                 <nav id="menu-header">
                     <ul>
-                        <li><a href="/">Home</a><span></span></li>
+                        <li><a href="/home">Home</a><span></span></li>
                         <li><a href="/cadastro">Cadastro</a><span></span></li>
-                        <li><a href="/templates">Templates</a><span></span></li>
-                        <li><a href="/contato">Contato</a><span></span></li>
+                        <li><a href="">Templates</a><span></span></li>
+                        <li><a href="">Contato</a><span></span></li>
                         <li><a href="/login">Acessar</a><span></span></li>
                     </ul>
                 </nav>

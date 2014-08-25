@@ -8,6 +8,7 @@
 	require("etc/phpmailer/phpmailer.inc.php");
 	require("etc/phpmailer/smtp.inc.php");
 	require("controllers/page.controller.php");
+	require("etc/helpers/HTML.class.php");
 	
 	//Conexão
 	$objConexao = new Conexao();
