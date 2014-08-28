@@ -1,4 +1,4 @@
-<?php echo Helpers::sha512(Helpers::geraSenha()); ?>
+<?php //echo Helpers::sha512(Helpers::geraSenha()); ?>
 
 <section class="large-12 medium-12 small-12 left" id="slider-main">
 	<div class="large-12 medium-12 small-12 left" id="slider">
