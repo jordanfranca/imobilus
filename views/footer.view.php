@@ -7,6 +7,10 @@
 				<div id="sociais-footer">
 					<ul>
 						<li><a id="facebook-footer" href=""></a></li>
+						<li><a id="twitter-footer" href=""></a></li>
+						<li><a id="youtube-footer" href=""></a></li>
+						<li><a id="plus-footer" href=""></a></li>
+						<li><a id="mail-footer" href=""></a></li>
 					</ul>
 				</div>
 		</div>		
