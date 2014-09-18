@@ -4,13 +4,13 @@
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-home"></i></a></li>
         <li><a href="/" target="_blank">Home</a></li>
-        <li class="active">Painel2</li>
+        <li class="active">Painel</li>
       </ol>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-            <div class="panel">aa
+            <div class="panel">
                 <div class="panel-heading">
                   <div class="panel-title"> <i class="fa fa-pencil"></i> Standard Fields </div>
                 </div>

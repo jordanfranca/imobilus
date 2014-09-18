@@ -426,11 +426,10 @@ ul.dropdown-items > li a:hover {
     border-top: 1px solid #bbb;
 }
 .user-menu .dropdown-signout {
-    width: 50%;
+    width: 100%;
     float: left;
     padding: 11px 5px 11px 15px;
     background: #fff;
-    border-left: 1px dashed #ccc;
     border-top: 1px solid #bbb;
 }
 /* User Dropdown Menu - Signout Buttons */

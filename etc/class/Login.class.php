@@ -21,6 +21,7 @@ class Login {
 		// Verifica se o usuário existe
 		$consulta = mysql_query("SELECT ".$this->campoLogin.",".$this->campoSenha.", COD_CADASTRO, NOM_USUARIO, IND_ATIVO FROM ".$this->tabela." WHERE ".$this->campoLogin." = '".$this->LoginUsuario."' AND IND_CONFIRMADO = 1 LIMIT 0,1");
 		$campos = mysql_num_rows($consulta);
+		$array = mysql_fetch_array($consulta);
 		// Se o usuário existir
 		if($campos != 0):
 			// Se a senha estiver incorreta
@@ -29,13 +30,11 @@ class Login {
 			// Se a senha estiver correta
 			else:
 				// Coloca as informações em sessões
-				$array = mysql_fetch_array($consulta);
 				session_start();
 				$_SESSION['codigo'] = $array['COD_CADASTRO'];
 				$_SESSION['nome'] = $array['NOM_USUARIO'];
 				$_SESSION['login'] = $login;
 				$_SESSION['senha'] = $senha;
-
 				//Reativar
 				if($array['IND_ATIVO'] == 0)
 					mysql_query("UPDATE $this->tabela SET IND_ATIVO = 1	 WHERE $this->campoLogin = '$login'") or die(mysql_error());

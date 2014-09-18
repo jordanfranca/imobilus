@@ -46,7 +46,40 @@
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+
+function verificaDeletar() {
+ var confirma = confirm("Confirma remoção deste registro?");
+ if (confirma){
+   return true;
+ } 
+ else {
+   return false;
+ } 
+}
+
+function verificaDesativarSite() {
+ var confirma = confirm("Confirma a desativação de seu WEBSITE?");
+ if (confirma){
+   return true;
+ } 
+ else {
+   return false;
+ } 
+}
+
+function verificaDesativarConta() {
+ var confirma = confirm("Confirma a desativação de sua CONTA?");
+ if (confirma){
+   return true;
+ } 
+ else {
+   return false;
+ } 
+}
+</script>
+</head>
 
 <body class="dashboard">
 <!-- Start: Header -->
@@ -56,7 +89,7 @@
     </a> </div>
   <div class="pull-right header-btns">
     <div class="btn-group user-menu">
-      <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown"> <span class="glyphicons glyphicons-user"></span> <b>Usuário</b> </button>
+      <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown"> <span class="glyphicons glyphicons-user"></span> <b> <?php echo $_SESSION['nome']; ?> </b> </button>
       <ul class="dropdown-menu checkbox-persist" role="menu">
         <li class="menu-arrow">
           <div class="menu-arrow-up"></div>
@@ -65,17 +98,16 @@
         <li>
           <ul class="dropdown-items">
             <li>
-              <div class="item-icon"><i class="fa fa-envelope-o"></i> </div>
-              <a class="item-message" href="messages.html">Mensagens</a> </li>
+              <div class="item-icon"><i class="glyphicons glyphicon-plus"></i> </div>
+              <a class="item-message" href="messages.html">Adicionar Imóvel</a> </li>
             <li>
-              <div class="item-icon"><i class="fa fa-calendar"></i> </div>
-              <a class="item-message" href="calendar.html">Calendário</a> </li>
+              <div class="item-icon"><i class="glyphicons glyphicons-imac"></i> </div>
+              <a class="item-message" href="calendar.html">Editar Website</a> </li>
             <li class="border-bottom-none">
               <div class="item-icon"><i class="fa fa-cog"></i> </div>
-              <a class="item-message" href="customizer.html">Configurações</a> </li>
+              <a class="item-message" href="customizer.html">Editar Conta</a></li>
             <li class="padding-none">
-              <div class="dropdown-lockout"><i class="fa fa-lock"></i> <a href="screen-lock.html">Screen Lock</a></div>
-              <div class="dropdown-signout"><i class="fa fa-sign-out"></i> <a href="login.html">Sign Out</a></div>
+              <div class="dropdown-signout"><i class="fa fa-sign-out"></i> <a href="login.html">Sair</a></div>
             </li>
           </ul>
         </li>

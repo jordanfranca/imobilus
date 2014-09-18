@@ -12,9 +12,17 @@
 		public function adicionarimovel() {
 			require("../views/adm/adicionarimovel.view.php");
 		}
+
+		public function editarconta() {
+			require("../views/adm/editarconta.view.php");
+		}
+
+		public function slides() {
+			require("../views/adm/slides.view.php");
+		}
 		
 		public function error() {
-			require("views/adm/erro.view.php");
+			require("../views/adm/erro.view.php");
 		}
 	}
 	
