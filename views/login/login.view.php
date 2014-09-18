@@ -3,8 +3,8 @@
 	<div class="row">
 		<div class="large-10 large-centered medium-12 medium-uncentered small-12 small-uncentered columns text-center" id="cadastro">
 			<h3>Acesse sua conta!</h3>
-			<form action="/home/add" method="POST">
-				<input class="text-field" required type="text" placeholder="Login" name="login" /><br />
+			<form action="/adm/login.php" method="POST">
+				<input class="text-field" required type="text" placeholder="E-mail" name="login" /><br />
 				<input class="text-field" required type="password" placeholder="Senha" name="senha" /><br />
 				<a href="#" class="forgot-password left">Esqueceu sua senha?</a>
 				<input class="button-form" type="reset" value="Limpar" />

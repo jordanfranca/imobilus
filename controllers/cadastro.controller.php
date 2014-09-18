@@ -13,9 +13,9 @@
 		public function add() {
 			$objCadastro = new Cadastro();
 			$objCadastro->setIntCreci($_POST['creci']);
-			$objCadastro->setStrEmail($_POST['email']);
+			$objCadastro->setStrEmail(Helpers::sha512($_POST['email']));
 			$objCadastro->setStrNome($_POST['nome']);
-			$objCadastro->setStrSenha(Helpers::sha512($_POST['creci'] . $_POST['senha']));
+			$objCadastro->setStrSenha(Helpers::sha512($_POST['senha']));
 			$objCadastro->setStrHash($strHash = Helpers::sha512(Helpers::geraSenha()));
 				
 			$objCadastro->Inserir();

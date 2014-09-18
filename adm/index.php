@@ -17,20 +17,34 @@ require("../etc/phpmailer/phpmailer.inc.php");
 require("../etc/phpmailer/smtp.inc.php");
 require("../controllers/page.controller.php");
 require("../etc/helpers/HTML.class.php");
+require("../etc/class/Login.class.php");
 
-//Conexão
-$objConexao = new Conexao();
-$objConexao->instance();
+if($strMetodo == 'login') {
+	//Redireciona para login
+	header('Location: /login');
+}
+else {
+	mysql_connect('localhost', 'root', '');
+	mysql_select_db('gts');
+
+	$verifica = new Login();
+	$verifica->verificar('/adm/?pg=login');
+
+	mysql_close();
+
+	//Header
+	require("../views/adm/header.view.php");
+
+	//Menu
+	require("../views/adm/menu.view.php");
+
+	//Controlador de todo o adm
+	require("../controllers/adm.controller.php");
+
+	//Footer
+	require("../views/adm/footer.view.php");
+
+}
 
 
-//Header
-require("../views/adm/header.view.php");
 
-//Menu
-require("../views/adm/menu.view.php");
-
-//Controlador de todo o adm
-require("../controllers/adm.controller.php");
-
-//Footer
-require("../views/adm/footer.view.php");
