@@ -9,6 +9,10 @@
 			require("../views/adm/painel.view.php");
 		}
 		
+		public function adicionarimovel() {
+			require("../views/adm/adicionarimovel.view.php");
+		}
+		
 		public function error() {
 			require("views/adm/erro.view.php");
 		}

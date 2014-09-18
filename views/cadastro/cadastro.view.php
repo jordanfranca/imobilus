@@ -18,7 +18,6 @@
 			<form action="/cadastro/add" method="POST">
 				<input class="text-field" required type="text" placeholder="Nome" name="nome" /><br />
 				<input class="text-field" required type="text" placeholder="E-mail" name="email" /><br />
-				<input class="text-field" required type="text" placeholder="Login" name="login" /><br />
 				<input class="text-field" required type="password" placeholder="Senha" name="senha" /><br />
 				<input class="text-field" required type="text" placeholder="Creci" name="creci" /><br />
 				<input class="button-form" type="reset" value="Limpar" />

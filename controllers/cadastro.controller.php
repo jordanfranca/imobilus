@@ -15,7 +15,6 @@
 			$objCadastro->setIntCreci($_POST['creci']);
 			$objCadastro->setStrEmail($_POST['email']);
 			$objCadastro->setStrNome($_POST['nome']);
-			$objCadastro->setStrLogin(Helpers::sha512($_POST['creci'] . $_POST['login']));
 			$objCadastro->setStrSenha(Helpers::sha512($_POST['creci'] . $_POST['senha']));
 			$objCadastro->setStrHash($strHash = Helpers::sha512(Helpers::geraSenha()));
 				

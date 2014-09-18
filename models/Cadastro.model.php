@@ -5,7 +5,6 @@
 	*/	
 	class Cadastro extends Conexao {
 		private $intCodigo;
-		private $strLogin;
 		private $strSenha;
 		private $intCreci;
 		private $strEmail;
@@ -20,12 +19,7 @@
 		public function setIntCodigo($intCodigo) {
 			$this->intCodigo = $intCodigo;
 		}
-		public function getStrLogin() {
-			return $this->strLogin;
-		}
-		public function setStrLogin($strLogin) {
-			$this->strLogin = $strLogin;
-		}
+
 		public function getStrSenha() {
 			return $this->strSenha;
 		}
@@ -66,15 +60,13 @@
 		public function Inserir() {
 			$objConexao = Cadastro::getConexao();
 			$objInsert = $objConexao->prepare("INSERT INTO tb_cadastros (
-										  DSC_LOGIN,
 										  DSC_SENHA,
 										  NUM_CRECI,
 										  DSC_EMAIL,
 										  NOM_USUARIO,
 										  DSC_HASH) VALUES
-										  (:login, :senha , :creci, :email, :nome, :hash)");
+										  (:senha , :creci, :email, :nome, :hash)");
 			
-			$objInsert->bindValue("login", self::getStrLogin(), PDO::PARAM_STR);
 			$objInsert->bindValue("senha", self::getStrSenha(), PDO::PARAM_STR);
 			$objInsert->bindValue("creci", self::getIntCreci(), PDO::PARAM_INT);
 			$objInsert->bindValue("email", self::getStrEmail(), PDO::PARAM_STR);
@@ -87,7 +79,7 @@
 		
 		public function getCadastroByEmail() {
 			$objConexao = Cadastro::getConexao();
-			$objConsulta = $objConexao->prepare("SELECT  DSC_LOGIN,
+			$objConsulta = $objConexao->prepare("SELECT 
 										  DSC_SENHA,
 										  NUM_CRECI,
 										  DSC_EMAIL,
@@ -104,7 +96,6 @@
 					self::setIntCreci($arrResult['NUM_CRECI']);
 					self::setStrEmail($arrResult['DSC_EMAIL']);
 					self::setStrHash($arrResult['DSC_HASH']);
-					self::setStrLogin($arrResult['DSC_LOGIN']);
 					self::setStrNome($arrResult['NOM_USUARIO']);
 					self::setStrSenha($arrResult['DSC_SENHA']);
 				}
@@ -116,7 +107,7 @@
 		
 		public function getCadastro() {
 			$objConexao = Cadastro::getConexao();
-			$objConsulta = $objConexao->prepare("SELECT  DSC_LOGIN,
+			$objConsulta = $objConexao->prepare("SELECT 
 										  DSC_SENHA,
 										  NUM_CRECI,
 										  DSC_EMAIL,
@@ -133,7 +124,6 @@
 					self::setIntCreci($arrResult['NUM_CRECI']);
 					self::setStrEmail($arrResult['DSC_EMAIL']);
 					self::setStrHash($arrResult['DSC_HASH']);
-					self::setStrLogin($arrResult['DSC_LOGIN']);
 					self::setStrNome($arrResult['NOM_USUARIO']);
 					self::setStrSenha($arrResult['DSC_SENHA']);
 				}
