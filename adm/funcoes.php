@@ -5,6 +5,7 @@
 	require("../etc/helpers/Helpers.class.php");
 	require("../etc/class/Email.class.php");
 	require("../models/Slide.model.php");
+	require("../etc/class/Canvas.class.php");
 
 	//Conexão
 	$objConexao = new Conexao();
@@ -14,9 +15,22 @@
 
 	switch ($action) {
 		case 'addSlide':
-				
+				$slide = $_FILES['slide'];
+				$reslide = Helpers::fotos($slide, 800, "../web/storage/slides");
+				$canvas = new Canvas();
 
-				header('Location: /adm/?pg=addcategoria');
+				//Faz foto no formato de templates
+				$canvas->carrega("../web/storage/slides/".$reslide."");
+				$canvas->redimensiona(800,400,'crop');
+				$canvas->grava("../web/storage/slides/".$reslide."", 100);
+				$canvas->resetar();	
+
+				$slide = new Slide();
+				$slide->setCaminho($reslide);
+				$slide->setWebsite($_SESSION['website']);
+				$slide->Inserir();
+
+				header('Location: /adm/?pg=slides');
 			break;
 
 		case 'excluirSlide':

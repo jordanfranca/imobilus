@@ -76,5 +76,55 @@
 			else
 				call_user_func(array($objClass, 'error'));
 		}
-		
+
+		/* Helper para fotos */
+		public static function fotos($foto, $tamanho, $pasta) {
+			$permissao = array('image/jpeg', 'image/jpg');
+			$fotos = $foto;
+			if(in_array($fotos['type'], $permissao)){
+			   $name_thumb = md5(uniqid(rand(), true)); 
+			   $name_thumb2 = md5(uniqid(rand(), true)); 
+			   $esploda = explode('.', $fotos['name']);
+			   $zap = end($esploda);
+			   $newName = $name_thumb.'_'.$name_thumb2.'.'.$zap;        
+			   $teste = self::Redimensionar($fotos['tmp_name'], $newName, $tamanho, $pasta);
+			   return $newName;
+			 }
+			 else {
+				header("Location: painel.php?erro=true");
+			 }
+		}		
+
+		public static function Redimensionar($tmp, $name, $largura, $pasta){
+                list($width, $height, $type, $attr) = getimagesize($tmp);
+                switch($type){
+                    case 1: $img = imagecreatefromgif($tmp);break;
+                    case 2: $img = imagecreatefromjpeg($tmp);break;
+                    case 3: $img = imagecreatefrompng($tmp);break;
+                    default:header("Location: painel.php?erro=true");
+                }
+                $altura = ($largura * $height)/$width;
+                $nova = imagecreatetruecolor($largura, $altura);
+				switch($type){
+					case 3:
+						imagesavealpha($nova, true);
+
+						$trans_colour = imagecolorallocatealpha($nova, 0, 0, 0, 127);
+						imagefill($nova, 0, 0, $trans_colour);
+					   
+						$red = imagecolorallocate($nova, 255, 0, 0);
+						imagefilledellipse($nova, 400, 300, 400, 300, $red);
+					break;	
+				}
+				
+                imagecopyresampled($nova, $img, 0, 0, 0, 0, $largura, $altura, $width, $height);
+                switch($type){
+                    case 1: imagegif($nova, "$pasta/$name");break;
+                    case 2: imagejpeg($nova, "$pasta/$name");break;
+                    case 3: imagepng($nova, "$pasta/$name");break;
+                    default:header("Location: painel.php?erro=true");
+                }
+                imagedestroy($img);
+                imagedestroy($nova);
+    	}
 	}

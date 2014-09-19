@@ -15,7 +15,7 @@
                   <div class="panel-title"> <i class="fa fa-pencil"></i> Adicionar novo slide</div>
                 </div>
                 <div class="panel-body">
-                  <form class="form-horizontal" role="form" method="POST" action="/adm/funcoes.php?ac=addCategoria">
+                  <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="/adm/funcoes.php?ac=addSlide">
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Selecione a imagem</label>
                       <div class="col-lg-10">
