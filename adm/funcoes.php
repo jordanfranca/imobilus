@@ -8,7 +8,10 @@
 	require("../models/Cadastro.model.php");
 	require("../models/Subdominio.model.php");
 	require("../models/Website.model.php");
+	require("../models/Template.model.php");
 	require("../etc/class/Canvas.class.php");
+	require("../etc/class/Subdominio.class.php");
+	require("../etc/apis/cpanel/xmlapi.php");
 
 	//Conexão
 	$objConexao = new Conexao();
@@ -138,6 +141,35 @@
 				$website->getWebsite();
 				//Faz sessão com o codigo do website
 				$_SESSION['codigowebsite'] = $website->getCodigo();
+
+				//Criar subdominio
+				$subdominioCpanel = new Subdominio();
+				$subdominioCpanel->gerarSubdominio($subdominiotxt);
+
+				//Criar template para o cliente
+				$templates = new Template();
+				$templates->setCodigo($template);
+				$bool = $templates->getTemplateByCodigo();
+				if($bool) {
+					$zip = new ZipArchive;
+					$res = $zip->open('../templates/zip/'.$templates->getPasta());
+					if ($res === TRUE) {
+				  		$zip->extractTo('../clientes/'.$subdominiotxt.'/');
+				  		$zip->close();
+					} 
+					else {
+					}
+				}
+				
+				//Gerar Arquivo de configuração
+				$fp = fopen("../clientes/".$subdominiotxt."/config.php", "w");
+				$conteudo = "<?php 
+					\$usuario = $_SESSION[codigo];
+					\$site = $_SESSION[codigowebsite];
+				?>";
+				$escreve = fwrite($fp, $conteudo);
+				fclose($fp);
+				
 				header('Location: /adm/?pg=painel');
 			}
 
@@ -145,6 +177,40 @@
 
 		break;
 
+		case 'adicionartemplate':
+			$nome = $_POST['nome'];
+			$versao = $_POST['versao'];
+			$zip = $_FILES['zip'];
+			$miniatura = $_FILES['miniatura'];
+			$ativo = $_POST['ativo'];
+
+			//Novo nome para template
+			$novonome = Helpers::sha512($zip['name'].date('D/M/Y hh:mm:ss'));
+			if(!move_uploaded_file($zip['tmp_name'], '../templates/zip/'.$novonome.'.zip'))
+				header('Location: /adm/?pg=painel');
+
+			//Miniatura
+			$relogo = Helpers::fotos($miniatura, 150, "../templates/miniaturas");
+			$canvas = new Canvas();
+
+			//Miniatura
+			$canvas->carrega("../templates/miniaturas/".$relogo."");
+			$canvas->redimensiona(150,150,'crop');
+			$canvas->grava("../templates/miniaturas/".$relogo."", 100);
+			$canvas->resetar();	
+			
+			$template = new Template();
+			$template->setNome($nome);
+			$template->setVersao($versao);
+			$template->setPasta($novonome.'.zip');
+			$template->setMiniatura($relogo);
+			$template->setAtivo($ativo);
+
+			$template->Adicionar();
+
+			header('Location: /adm/?pg=template');
+		break;
+		//Desativar Site
 		case 'desativarsite':
 			$website = new Website();
 			$website->setUsuario($_SESSION['codigo']);
@@ -152,7 +218,7 @@
 
 			header('Location: /adm/?pg=painel');
 		break;
-
+		//Ativar Site
 		case 'ativarsite':
 			$website = new Website();
 			$website->setUsuario($_SESSION['codigo']);
@@ -163,6 +229,6 @@
 
 		default:
 			header('Location: /adm/?pg=painel');
-			break;
+		break;
 	}
 ?>

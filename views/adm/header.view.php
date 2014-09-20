@@ -103,15 +103,17 @@ function verificaDesativarConta() {
         <li class="dropdown-header">Sua Conta<span class="pull-right glyphicons glyphicons-user"></span></li>
         <li>
           <ul class="dropdown-items">
+            <?php if($_SESSION['websitebool'] && $_SESSION['websiteativo'] == 1)  { ?>
             <li>
               <div class="item-icon"><i class="glyphicons glyphicon-plus"></i> </div>
               <a class="item-message" href="messages.html">Adicionar Imóvel</a> </li>
             <li>
               <div class="item-icon"><i class="glyphicons glyphicons-imac"></i> </div>
               <a class="item-message" href="calendar.html">Editar Website</a> </li>
+            <?php } ?>
             <li class="border-bottom-none">
               <div class="item-icon"><i class="fa fa-cog"></i> </div>
-              <a class="item-message" href="customizer.html">Editar Conta</a></li>
+              <a class="item-message" href="/adm/?pg=editarconta">Editar Conta</a></li>
             <li class="padding-none">
               <div class="dropdown-signout"><i class="fa fa-sign-out"></i> <a href="/adm/funcoes.php?ac=deslogar">Sair</a></div>
             </li>

@@ -6,3 +6,7 @@
 #sidebar ul.sidebar-nav li ul.sub-nav{background: #fafafa;border-color: #c9c9c9;}
 .breadcrumb{font-size:14px;} 
 #content:after{background-color:rgb(229, 229, 229);background-image:none;} 
+
+.img-template {
+	margin-bottom: 15px;
+}

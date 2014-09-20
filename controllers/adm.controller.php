@@ -18,7 +18,15 @@
 		}
 
 		public function criarwebsite() {
+			$template = new Template();
+			$templates = $template->getTemplates();
 			require("../views/adm/criarwebsite.view.php");
+		}
+
+		public function template() {
+			$template = new Template();
+			$templates = $template->getTemplates();
+			require("../views/adm/template.view.php");
 		}
 
 		public function editarconta() {

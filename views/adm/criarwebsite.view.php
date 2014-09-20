@@ -68,28 +68,17 @@
                     </div>
                     <div class="form-group">
                       <label class="col-md-3 col-lg-2 control-label">Template:</label>
-                      <div class="col-md-9">
-                        <div class="col-md-3">
-                            
-                            <input type="radio" name="template" id="yes" value="1" />
-                            <label for="yes">Template 1</label> 
+                        <div class="col-md-9">
+                        <?php 
+                          if($templates != false) {
+                            foreach ($templates as $array) {
+                        ?>
+                        <div class="col-md-3 text-center">
+                            <input type="radio" name="template" id="yes" value="<?php echo $array['COD_TEMPLATE']; ?>" />
+                            <label for="yes"><?php echo $array['NOM_TEMPLATE']; ?></label>
+                            <div class="img-template"><img src="/templates/miniaturas/<?php echo $array['DSC_MINIATURA']; ?>" /></div>
                         </div>
-                        <div class="col-md-3">
-                            
-                            <input type="radio" name="template" id="yes" value="1" />
-                            <label for="yes">Template 1</label> 
-                        </div>
-                        <div class="col-md-3">
-                            
-                            <input type="radio" name="template" id="yes" value="1" />
-                            <label for="yes">Template 1</label> 
-                        </div>
-                        <div class="col-md-3">
-                            
-                            <input type="radio" name="template" id="yes" value="1" />
-                            <label for="yes">Template 1</label> 
-                        </div>
-          
+                        <?php }} ?>
                         </div>
                     </div>
                     <div class="form-group">
