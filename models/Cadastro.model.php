@@ -76,6 +76,38 @@
 			parent::Create($objInsert);
 			
 		}
+
+		public function Atualizar() {
+			$objConexao = Cadastro::getConexao();
+			$objAtualizar = $objConexao->prepare("UPDATE tb_cadastros
+												   SET 
+												   NOM_USUARIO = :nome,
+												   NUM_CRECI = :creci,
+												   DSC_SENHA = :senha
+										  		WHERE 
+										  		DSC_EMAIL = :email");
+			
+			$objAtualizar->bindValue("senha", self::getStrSenha(), PDO::PARAM_STR);
+			$objAtualizar->bindValue("creci", self::getIntCreci(), PDO::PARAM_INT);
+			$objAtualizar->bindValue("email", self::getStrEmail(), PDO::PARAM_STR);
+			$objAtualizar->bindValue("nome", self::getStrNome(), PDO::PARAM_STR);
+			
+			parent::Create($objAtualizar);
+			
+		}
+
+		public function desativarConta() {
+			$objConexao = Cadastro::getConexao();
+			$objAtualizar = $objConexao->prepare("UPDATE tb_cadastros
+												   SET 
+												   IND_ATIVO = 0
+										  		WHERE 
+										  		DSC_EMAIL = :email");
+			
+			$objAtualizar->bindValue("email", self::getStrEmail(), PDO::PARAM_STR);	
+			parent::Create($objAtualizar);
+			
+		}
 		
 		public function getCadastroByEmail() {
 			$objConexao = Cadastro::getConexao();
@@ -89,7 +121,7 @@
 										  tb_cadastros
 										  WHERE DSC_EMAIL = :str_email
 			");
-			$objConsulta->bindValue("str_email", $this->getStrEmail(), PDO::PARAM_STR);
+			$objConsulta->bindValue("str_email", self::getStrEmail(), PDO::PARAM_STR);
 			$objRetorno = parent::Read($objConsulta);
 			if($objRetorno->rowCount() > 0) {
 				foreach ($objRetorno->fetchAll() as $arrResult) {

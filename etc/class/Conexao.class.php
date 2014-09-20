@@ -15,6 +15,7 @@
 			try {
 				$objDbPDO = new PDO('mysql:host='.$this->strHost.';dbname='.$strBanco, $this->strUser, $this->strPass);
 				self::$objPDO = $objDbPDO;
+				$objDbPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				return self::$objPDO;
 			} catch(PDOException $e){
 				echo $e->getMessage();

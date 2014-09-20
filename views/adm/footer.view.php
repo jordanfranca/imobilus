@@ -14,9 +14,13 @@
 -->
 
 <!-- Plugins -->
+<script type="text/javascript" src="/web/js/adm/vendor/plugins/globalize/globalize.js"></script> 
+<script type="text/javascript" src="/web/js/adm/vendor/plugins/chosen/chosen.jquery.min.js"></script> 
 <script type="text/javascript" src="/web/js/adm/vendor/plugins/calendar/gcal.js"></script><!-- Calendar Addon -->
 <script type="text/javascript" src="/web/js/adm/vendor/plugins/jqueryflot/jquery.flot.resize.min.js"></script><!-- Flot Charts Addon -->
 <script type="text/javascript" src="/web/js/adm/vendor/plugins/datatables/js/datatables.js"></script><!-- Datatable Bootstrap Addon -->
+<script type="text/javascript" src="/web/js/adm/vendor/plugins/colorpicker/bootstrap-colorpicker.js"></script> 
+<script type="text/javascript" src="/web/js/adm/vendor/plugins/formswitch/js/bootstrap-switch.min.js"></script> 
 
 <!-- Plugins - Via CDN --> 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.0.1/ckeditor.js"></script> 
@@ -29,7 +33,6 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-
    
    // Theme Example - Ckeditor Colorpicker
    $('.editor-ui-color').click(function () {
@@ -43,6 +46,10 @@
    // editors being displayed on the same page.
      CKEDITOR.disableAutoInline = true;
 
+      //Init jquery Color Picker
+   $('.colorpicker').colorpicker();
+    $(".radio").uniform();
+    $(".checkbox").uniform();
 
  });
 </script>

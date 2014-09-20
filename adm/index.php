@@ -11,6 +11,8 @@ if(!$strMetodo)
 require('../models/CRUD.model.php');
 require('../etc/class/Conexao.class.php');
 require("../models/Cadastro.model.php");
+require("../models/Slide.model.php");
+require("../models/Website.model.php");
 require("../etc/helpers/Helpers.class.php");
 require("../etc/class/Email.class.php");
 require("../etc/phpmailer/phpmailer.inc.php");
@@ -27,6 +29,7 @@ else {
 	mysql_connect('localhost', 'root', '');
 	mysql_select_db('gts');
 
+
 	$verifica = new Login();
 	$verifica->verificar('/adm/?pg=login');
 
@@ -35,6 +38,13 @@ else {
 	//Conexão
 	$objConexao = new Conexao();
 	$objConexao->instance();
+
+	//Buscar Website do usuário
+	$website = new Website();
+	$website->setUsuario($_SESSION['codigo']);
+	$_SESSION['websitebool'] = $website->getWebsite();
+	$_SESSION['codigowebsite']  = $website->getCodigo();
+	$_SESSION['websiteativo'] = $website->getAtivo();
 
 	//Header
 	require("../views/adm/header.view.php");

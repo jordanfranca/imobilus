@@ -31,6 +31,7 @@
                 </div>
               </div>
         </div>
+        <?php if($slides != false) { ?>
         <div class="col-md-12">
               <div class="panel">
                 <div class="panel-heading">
@@ -46,17 +47,30 @@
                       </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($slides as $array) {
+                        ?>
                           <tr>
-                            <td>1</td>
-                            <td><a href="#">Clique para ver</a></td>
-                            <td><a href="/adm/funcoes.php?ac=excluircategoria&id=" onClick="return verificaDeletar();">Excluir</a></td>
+                            <td><?php echo $array['COD_SLIDE'] ?></td>
+                            <td><a href="/web/storage/slides/<?php echo $array['DSC_CAMINHO']; ?>" target="_blank">Clique para ver</a></td>
+                            <td><a href="/adm/funcoes.php?ac=excluirslide&id=<?php echo $array['COD_SLIDE'] ?>&foto=<?php echo $array['DSC_CAMINHO']; ?>" onClick="return verificaDeletar();">Excluir</a></td>
                           </tr>
+                        <?php } ?>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
-      </div>
+        </div>
+        <?php } else { ?>
+        <div class="col-md-12">
+              <div class="panel">
+                <div class="panel-heading">
+                  <div class="panel-title"> <i class="fa fa-table"></i> Nenhum slide cadastrado! </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <?php } ?>
     </div>
   </section>
   <!-- End: Content --> 

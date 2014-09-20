@@ -31,7 +31,7 @@
 			
 			//Obj de Cadastro
 			$objCadastro = new Cadastro();
-			$objCadastro->setStrEmail($strEmail);
+			$objCadastro->setStrEmail(Helpers::sha512($strEmail));
 			$boolCadastro = $objCadastro->getCadastroByEmail();
 			if($boolCadastro) {
 				if($objCadastro->getStrHash() == $strHash) {

@@ -23,8 +23,8 @@
 			parent::Delete($objDelete);
 		}
 
-		public function getSlides($intWebsite) {
-			$objConexao = Categoria::getConexao();
+		public function getSlides() {
+			$objConexao = Slide::getConexao();
 			$objConsulta = $objConexao->prepare("SELECT  
 										   DSC_CAMINHO,
 										   COD_SLIDE
@@ -33,13 +33,23 @@
 										  WHERE 
 										  COD_WEBSITE = :website
 			");
-			$objConsulta->bindValue("website", $intWebsite, PDO::PARAM_INT);
+			$objConsulta->bindValue("website", self::getWebsite(), PDO::PARAM_INT);
 			$objRetorno = parent::Read($objConsulta);
-			if($objRetorno->rowCount() > 0) {
+			if($objRetorno->rowCount() > 0)
 				return $objRetorno;
-			}
 			else
 				return false;
+		}
+
+
+		public function getWebsite() {
+		    return $this->intCodigoWebsite;
+		}
+		
+		public function setWebsite($website) {
+		    $this->intCodigoWebsite = $website;
+		
+		    return $this;
 		}
 
 

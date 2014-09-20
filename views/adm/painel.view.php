@@ -9,6 +9,7 @@
     </div>
     <div class="container">
       <div class="row">
+        <?php if($_SESSION['websitebool'] && $_SESSION['websiteativo'] == 1) { ?>
         <div class="col-md-12">
               <div class="panel">
                 <div class="panel-heading">
@@ -38,7 +39,17 @@
                 </div>
               </div>
             </div>
-      </div>
+        </div>
+        <?php } else { ?>
+        <div class="col-md-12">
+              <div class="panel">
+                <div class="panel-heading">
+                  <div class="panel-title"> <i class="fa fa-table"></i>  Você não tem um website criado ou ativo!</div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <?php } ?>
       </div>
     </div>
   </section>

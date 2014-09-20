@@ -40,7 +40,6 @@
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="img/favicon.ico" />
-<script src="/web/js/jquery.maskMoney.js" type="text/javascript"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -114,7 +113,7 @@ function verificaDesativarConta() {
               <div class="item-icon"><i class="fa fa-cog"></i> </div>
               <a class="item-message" href="customizer.html">Editar Conta</a></li>
             <li class="padding-none">
-              <div class="dropdown-signout"><i class="fa fa-sign-out"></i> <a href="login.html">Sair</a></div>
+              <div class="dropdown-signout"><i class="fa fa-sign-out"></i> <a href="/adm/funcoes.php?ac=deslogar">Sair</a></div>
             </li>
           </ul>
         </li>

@@ -17,6 +17,10 @@
 			require("../views/adm/adicionarfoto.view.php");
 		}
 
+		public function criarwebsite() {
+			require("../views/adm/criarwebsite.view.php");
+		}
+
 		public function editarconta() {
 			$objUsuario = new Cadastro();
 			$objUsuario->setStrEmail($_SESSION['login']);
@@ -25,6 +29,9 @@
 		}
 
 		public function slides() {
+			$slide = new Slide();
+			$slide->setWebsite($_SESSION['codigowebsite']);
+			$slides = $slide->getSlides();
 			require("../views/adm/slides.view.php");
 		}
 		
