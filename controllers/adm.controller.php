@@ -13,7 +13,14 @@
 			require("../views/adm/adicionarimovel.view.php");
 		}
 
+		public function adicionarfoto() {
+			require("../views/adm/adicionarfoto.view.php");
+		}
+
 		public function editarconta() {
+			$objUsuario = new Cadastro();
+			$objUsuario->setStrEmail($_SESSION['login']);
+			$objUsuario->getCadastroByEmail();
 			require("../views/adm/editarconta.view.php");
 		}
 

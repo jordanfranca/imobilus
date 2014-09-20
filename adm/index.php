@@ -32,6 +32,10 @@ else {
 
 	mysql_close();
 
+	//Conexão
+	$objConexao = new Conexao();
+	$objConexao->instance();
+
 	//Header
 	require("../views/adm/header.view.php");
 
