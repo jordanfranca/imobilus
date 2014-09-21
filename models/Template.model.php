@@ -40,13 +40,34 @@
 								            IND_ATIVO
 										  FROM
 										  tb_template
-										  WHERE IND_ATIVO = 1
 			");
 			$objRetorno = parent::Read($objConsulta);
 			if($objRetorno->rowCount() > 0)
 				return $objRetorno;
 			else
 				return false;
+		}
+
+		public function desativarTemplate() {
+			$objConexao = Template::getConexao();
+			$objConsulta = $objConexao->prepare("UPDATE 
+												  tb_template
+												 SET IND_ATIVO = 0
+												 WHERE COD_TEMPLATE = :codigo;
+			");
+			$objConsulta->bindValue("codigo", self::getCodigo(), PDO::PARAM_INT);
+			$objRetorno = parent::Read($objConsulta);
+		}
+
+		public function ativarTemplate() {
+			$objConexao = Template::getConexao();
+			$objConsulta = $objConexao->prepare("UPDATE 
+												  tb_template
+												 SET IND_ATIVO = 1
+												 WHERE COD_TEMPLATE = :codigo;
+			");
+			$objConsulta->bindValue("codigo", self::getCodigo(), PDO::PARAM_INT);
+			$objRetorno = parent::Read($objConsulta);
 		}
 
 		public function getTemplateByCodigo() {

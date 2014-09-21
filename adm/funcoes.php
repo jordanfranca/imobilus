@@ -89,7 +89,7 @@
 
 		case 'criarwebsite':
 			$titulo = $_POST['titulo'];
-			$subdominiotxt = $_POST['subdominio'];
+			$subdominiotxt = Helpers::removeAcentos(utf8_decode($_POST['subdominio']));
 			$email = $_POST['email'];
 			$telefone = $_POST['telefone'];
 			$corprimaria = $_POST['corprimaria'];
@@ -160,7 +160,7 @@
 					else {
 					}
 				}
-				
+
 				//Gerar Arquivo de configuração
 				$fp = fopen("../clientes/".$subdominiotxt."/config.php", "w");
 				$conteudo = "<?php 
@@ -225,6 +225,25 @@
 			$website->DesativarAtivarWebsite(1);
 
 			header('Location: /adm/?pg=painel');
+		break;
+
+		//Desativar Template
+		case 'desativartemplate':
+			$template = new Template();
+			$id = (int) $_GET['id'];
+			$template->setCodigo($id);
+			$template->desativarTemplate();
+
+			header('Location: /adm/?pg=template');
+		break;
+		//Ativar
+		case 'ativartemplate':
+			$template = new Template();
+			$id = (int) $_GET['id'];
+			$template->setCodigo($id);
+			$template->ativarTemplate();
+
+			header('Location: /adm/?pg=template');
 		break;
 
 		default:

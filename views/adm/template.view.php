@@ -56,9 +56,8 @@
                 </div>
               </div>
         </div>
-        <?php if($templates != false) {
-          
-           ?>
+        <?php if($templates != false) { 
+        ?>
         <div class="col-md-12">
               <div class="panel">
                 <div class="panel-heading">
@@ -70,7 +69,7 @@
                       <tr>
                         <th>#</th>
                         <th>Nome template</th>
-                        <th>Desativar</th>
+                        <th>Ativar/Desativar</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -78,7 +77,12 @@
                           <tr>
                             <td><?php echo $array['COD_TEMPLATE']; ?></td>
                             <td><?php echo $array['NOM_TEMPLATE']; ?></td>
-                            <td><a href="/adm/funcoes.php?ac=desativartemplate&id=<?php echo $array['COD_TEMPLATE']; ?>" onClick="return verificaDeletar();">Desativar</a></td>
+                            <td><?php if($array['IND_ATIVO'] == 1) {?>
+                                <a href="/adm/funcoes.php?ac=desativartemplate&id=<?php echo $array['COD_TEMPLATE']; ?>" onClick="return verificaDeletar();">Desativar</a>
+                                <?php }else  {?>
+                                <a href="/adm/funcoes.php?ac=ativartemplate&id=<?php echo $array['COD_TEMPLATE']; ?>">Ativar</a>
+                                <?php } ?>
+                              </td>
                           </tr>
                           <?php } ?>
                     </tbody>

@@ -1,0 +1,359 @@
+/* Principais */
+
+body {
+	margin: 0; padding: 0; font-family: arial; background: url("../img/bg-site.jpg") center top;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	padding: 0; margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+/* Header */
+#header {
+	background: url("../img/bg-header.jpg") left top; width: 100%; height: 114px;
+}
+
+#logo {
+	width: 320px; height: 88px; padding-top: 10px;
+}
+
+/* Footer */
+#footer {
+	background: #2A2626; height: 75px; width: 100%; margin-top: 42px;
+}
+
+#assinatura {
+	font-family: "Trebuchet MS", sans-serif; font-size: 14px; font-style: italic;
+	text-align: right; color: #CCCCCC; padding-top: 31px;
+}
+
+#curtir-top{
+	font-size: 20px; font-style: italic; padding: 45px 40px 0 0; width: 500px;
+}
+
+.curtir2 {
+	width: 200px;
+}
+
+
+/* Classes */
+.alinha-centro {
+	width: 1020px; margin: 0 auto;
+}
+
+.marrom-c {
+	color: #999999;
+}
+
+.cinza-b{
+	color: #CCCCCC;
+}
+
+.clear {
+	clear: both;
+}
+
+.barra-separatoria {
+	border-bottom: solid 1px #333333; box-shadow: 1px 1px 1px #999999; margin-bottom: 15px;
+}
+
+.title {
+	font-size: 24px; font-family: "Trebuchet MS", sans-serif; color: #E6E6E6; font-style: italic;
+	margin-bottom: 20px;
+}
+
+
+/* Esquerda */
+#logo, #menu, #buscar, #input-buscar, .txt-link, .post2, .post1, .post3, 
+.post1-left, .post2-left, .post3-left, .esquerda-form, .lista-itens-empresa li, 
+.txt-servicos, .icone-servico, .img-cliente, .btn-grande-opc, 
+.numeropg, .comentarios, .quantidade, .balao, .curtir2 {
+	float: left;
+}
+
+/* Direita */
+.selecionado, #conteudo, .direita-form, .direita-servicos, .txt-servico,
+.direita-cliente, .sociais, .plugins, #curtir-top, .escrita-top{
+	float: right;
+}
+
+
+/* Home page */
+#menu {
+	width: 190px; padding-top: 50px; margin-bottom: 30px;
+}
+
+/* Menu */
+#input-buscar {
+	background: none; height: 31px; border: none; width: 149px; padding-left: 10px;
+	font-family: "Trebuchet MS", sans-serif; color: #9B9594;
+}
+
+#base-busca {
+	width: 100%; height: 31px; background: #4D4D4D; border: solid 1px #4D4D4D; border-radius: 3px;
+	box-shadow: 1px 1px 1px #999999; margin-bottom: 30px;
+}
+
+#buscar {
+	width: 31px; height: 31px; background: url("../img/btn-buscar.png") left top no-repeat;
+	border: none;
+}
+
+.base-menu {
+	width: 180px; height: 35px; color: #D3D3D3; text-shadow: 1px 1px #000;
+}
+
+.txt-link a {
+	color: #D3D3D3; text-shadow: 1px 1px #000;
+}
+
+.txt-link a:hover {
+	color: #F15A24;
+}
+
+.selecionado {
+	margin-top: 3px;
+}
+
+#conteudo {
+	width: 796px; margin-bottom: 
+}
+
+.linha-fina {
+	font-family: "Trebuchet MS", sans-serif; color: #333333; font-size: 12px; font-style: italic;
+	margin: 10px 0 20px;
+}
+
+.post2, .post1, .post3, .post1-left, .post2-left, .post3-left{
+	background: #1A1A1A;  box-shadow: 1px 1px 1px #A8A8A8; border-radius: 3px; padding: 3px; 
+	margin-bottom: 10px;
+}
+
+.post1-left, .post2-left, .post3-left {
+	margin-left: 14px;
+}
+
+
+.post1, .post1-left {
+	width: 141px; height: 175px;
+}
+
+.post2, .post2-left {
+	width: 302px; height: 175px;
+}
+
+.post3, .post3-left {
+
+}
+
+.post2 img, .post1 img, .post3 img, .post2-left img, .post1-left img, .post3-left img  {
+	margin-bottom: 5px;
+}
+
+.txt-titulo-post, .linha-fina-post {
+	font-family: "Trebuchet MS", sans-serif; color: #E6E6E6; padding-left: 5px;
+	font-style: italic;
+}
+
+.txt-titulo-post {
+	font-size: 16px; margin-bottom: 5px;
+}
+
+.linha-fina-post {
+	font-size: 10px;
+}
+
+/* Contato */
+#base-conteudo-pgs {
+	width: 745px; padding: 30px; background: #1A1A1A; border-radius: 8px;
+}
+
+.txt-intro-contato {
+	font-size: 13px; color: #B3B3B3; font-family: "Trebuchet MS", sans-serif;
+}
+
+.intro2-contato {
+	font-size: 16px; color: #F15A24; font-family: "Trebuchet MS", sans-serif;
+	width: 655px; margin: 0 auto;
+}
+
+.alinha-contato {
+	width: 655px; margin: 0 auto;
+}
+
+.txt-input-contato {
+	font-family: "Trebuchet MS", sans-serif; font-size: 13px; color: #B3B3B3;
+	margin-bottom: 15px;
+}
+
+.base-form {
+	margin-top: 30px;
+}
+
+.formulario-contato {
+	width: 296px; height: 32px; background: #504C4E; border: none;
+	font-family: "Trebuchet MS", sans-serif; color: #FFF;
+	padding-left: 10px;
+}
+
+.text-areamsg {
+	width: 634px; border: none; background: #504C4E; height: 203px;
+	margin: 0; padding: 5px 10px 5px;
+	font-family: "Trebuchet MS", sans-serif; color: #FFF;
+}
+
+.input-enviar {
+	text-align: right; margin-top: 20px;
+}
+
+.input-enviar input {
+	width: 198px; height: 60px; background: #504C4E; border: solid 1px #000000;
+	color: #B3B3B3; border-radius: 2px; 
+	font-family: "Trebuchet MS", sans-serif; font-size: 14px;
+	box-shadow: 0px 3px 0px 0px #000000;
+}
+
+/* A empresa */
+.img-intro-empresa {
+	margin-left: -20px; margin-bottom: 40px; margin-top: -15px;
+}
+
+.txt-empresa, .txt-servicos{
+	font-family: "Trebuchet MS", sans-serif; font-size: 13px;
+	color: #B3B3B3;
+}
+
+.txt-empresa a, .txt-servicos a {
+	color: #F15A24	;
+}
+
+.lista-itens-empresa {
+	padding-left: 35px; padding-top: 45px;
+}
+
+.lista-itens-empresa li {
+	width: 100px; height: 100px; margin-bottom: 10px;
+}
+
+.margem-esquerda-empresa {
+	margin-left: 11px;
+}
+
+.txt-servicos {
+	width: 357px;
+}
+
+.direita-servicos {
+	width: 314px;
+}
+
+.icone-servico {
+	width: 40px; height: 40px; margin-bottom: 10px;
+}
+.txt-servico {
+	font-family: "Trebuchet MS", sans-serif; font-size: 16px;
+	font-style: italic; color: #B3B3B3; width: 235px;	
+	margin-top: 7px;
+}
+
+/* Clientes */
+.base-cliente {
+	margin-bottom: 40px;
+}
+
+.img-cliente {
+	width: 362px; height: 193px; border-radius: 8px;
+	background: #FFF;
+}
+
+.direita-cliente {
+	width: 352px; 
+	font-family: "Trebuchet MS", sans-serif; font-size: 13px;
+	color: #B3B3B3;
+}
+
+#paginacao {
+	width: 805px; height: 59px; background: #333333; margin-top: 55px;
+	border-radius: 5px; padding-top: 20px;
+}
+
+.btn-grande-opc {
+	text-align: center; width: 178px; height: 30px; background: #808080;
+	border-radius: 5px; padding-top: 12px;
+	font-family: "Trebuchet MS", sans-serif; font-size: 14px;
+	margin-left: 15px;
+}
+
+.btn-grande-opc a {
+	color: #FFF;
+}
+
+.numeropg {
+	padding-top: 15px; font-size: 14px; font-family: "Trebuchet MS", sans-serif; 
+	width: 45px; text-align: center;
+}
+
+.numeropg a {
+	color: #808080;
+}
+
+.numeropg a:hover {
+	color: #F2F2F2;
+}
+
+.direita-cliente a {
+	color: #F15A24;
+}
+
+.barra-separatoria2 {
+	width: 100%; margin: 20px 0 20px; border-bottom: solid 1px #000;
+	box-shadow: 1px 1px 1px #513F33;
+}
+.balao {
+	width: 24px; height: 24px;
+}
+
+.quantidade {
+	color: #FFF; font-family: "Trebuchet MS", sans-serif; 
+	font-size: 16px; margin-left: 15px;
+}
+
+.base-cases {
+	width: 745px; padding: 30px 30px 5px; background: #1A1A1A; border-radius: 8px;
+	margin-bottom: 25px; box-shadow: 0px 1px 1px #A8A8A8;
+}
+
+/* Adm */
+.form-input input {
+	color: #FFF;
+}
+
+.form-input select {
+	width: 300px; background: #504C4E; border: none;
+	font-family: "Trebuchet MS", sans-serif; color: #FFF;
+	padding-left: 10px; height: 30px;
+}
+
+table.tabela tr td {
+	padding: 3px;
+}
+.link a {
+	color: #FFF;
+}
+
+.link a:hover {
+	text-decoration: underline;
+}
+
+table.tabela:hover {
+	background: #666;
+}
+

@@ -1,0 +1,49 @@
+[27-Aug-2013 12:06:21] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:04:39] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:06:36] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:10:57] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:17:06] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:29:44] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:35:44] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:38:13] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:41:47] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 14:42:28] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 15:11:26] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:11:26] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:11:26] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:11:26] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:11:26] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:11:26] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:11:26] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:11:26] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:11:26] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:11:26] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:11:26] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:11:26] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:11:26] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 15:12:31] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:12:31] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:12:31] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:12:31] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:12:31] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:12:31] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:12:31] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:12:31] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:12:31] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:12:31] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:12:31] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:12:31] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:12:31] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77
+[20-Sep-2013 15:13:19] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:13:19] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:13:19] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:13:19] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:13:19] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:13:19] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:13:19] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:13:19] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:13:19] PHP Warning:  Division by zero in /home2/extremv1/public_html/class/funcoes.php on line 44
+[20-Sep-2013 15:13:19] PHP Warning:  imagecreatetruecolor() [<a href='function.imagecreatetruecolor'>function.imagecreatetruecolor</a>]: Invalid image dimensions in /home2/extremv1/public_html/class/funcoes.php on line 45
+[20-Sep-2013 15:13:19] PHP Warning:  imagecopyresampled(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 58
+[20-Sep-2013 15:13:19] PHP Warning:  imagedestroy(): supplied argument is not a valid Image resource in /home2/extremv1/public_html/class/funcoes.php on line 65
+[20-Sep-2013 15:13:19] PHP Fatal error:  Erro: Arquivo de imagem não encontrado! in /home2/extremv1/public_html/class/Canvas.class.php on line 77

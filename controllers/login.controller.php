@@ -2,6 +2,7 @@
 
 	class LoginController extends Page{
 		public function index() {
+			$intConfirma = 0;
 			require("views/login/login.view.php");
 		}
 	

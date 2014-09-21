@@ -72,13 +72,14 @@
                         <?php 
                           if($templates != false) {
                             foreach ($templates as $array) {
+                              if($array['IND_ATIVO'] == 1) {
                         ?>
                         <div class="col-md-3 text-center">
                             <input type="radio" name="template" id="yes" value="<?php echo $array['COD_TEMPLATE']; ?>" />
                             <label for="yes"><?php echo $array['NOM_TEMPLATE']; ?></label>
                             <div class="img-template"><img src="/templates/miniaturas/<?php echo $array['DSC_MINIATURA']; ?>" /></div>
                         </div>
-                        <?php }} ?>
+                        <?php }}} ?>
                         </div>
                     </div>
                     <div class="form-group">

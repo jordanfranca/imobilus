@@ -46,7 +46,7 @@
 			}
 			else 
 				$intConfirma = 3;
-			require('views/cadastro/cadastro.view.php');
+			require('views/login/login.view.php');
 		}
 		
 		public function consultarId () {
