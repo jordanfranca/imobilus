@@ -1,13 +1,31 @@
 <?php
 	class HTML {
 		//Retorna combo de option true ou false
-		public static function optionTrueFalse ($strNomeSelect = 'sim-nao', $classe = ''){
+		public static function optionTrueFalse ($strNomeSelect = 'sim-nao', $classe = '', $default = ''){
 			$strCombo = '
-				<select name="'.$strNomeSelect.'" '.$classe.' >
+				<select name="'.$strNomeSelect.'" '.$classe.' >		
+			';
+			if($default != '') {
+				if($default == 1) {
+					$strCombo .= '
+					<option value="1" selected>Sim</option>
+					<option value="0">Não</option>
+					';
+				}
+				else {
+					$strCombo .= '
+					<option value="1">Sim</option>
+					<option value="0" selected>Não</option>
+				';
+				}
+			}
+			else {
+				$strCombo .= '
 					<option value="1">Sim</option>
 					<option value="0">Não</option>
-				</select>
-			';
+				';
+			}
+			$strCombo .= '</select>';
 			return $strCombo;
 		}
 		

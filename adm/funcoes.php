@@ -172,10 +172,95 @@
 				
 				header('Location: /adm/?pg=painel');
 			}
-
-
-
 		break;
+
+		case 'editarwebsite':
+			$titulo = $_POST['titulo'];
+			$email = $_POST['email'];
+			$telefone = $_POST['telefone'];
+			$corprimaria = $_POST['corprimaria'];
+			$corsecundaria = $_POST['corsecundaria'];
+			$sobre = $_POST['sobre'];
+			$template = $_POST['template'];
+			$publicado = $_POST['publicado'];
+			$logo = $_FILES['logo'];
+			$templateatual = $_POST['templateatual'];
+
+			//Verifica se o logo vem vazio
+			if($logo['tmp_name'] == '')
+				$relogo = $_POST['logoatual'];
+			else {
+				//Logo
+				$relogo = Helpers::fotos($logo, 200, "../web/storage/logo");
+				$canvas = new Canvas();
+
+				//Faz foto no formato de logos
+				$canvas->carrega("../web/storage/logo/".$relogo."");
+				$canvas->redimensiona(200,150,'crop');
+				$canvas->grava("../web/storage/logo/".$relogo."", 100);
+				$canvas->resetar();	
+			}
+
+			//Website
+			$website = new Website();
+			$website->setTitulo($titulo);
+			$website->setEmail($email);
+			$website->setTelefone($telefone);
+			$website->setCorprimaria($corprimaria);
+			$website->setCorsecundaria($corsecundaria);
+			$website->setSobre($sobre);
+			$website->setTemplate($template);
+			$website->setPublicado($publicado);
+			$website->setLogo($relogo);
+			$website->setUsuario($_SESSION['codigo']);
+
+			$website->Atualizar();
+
+			//Logica para alterar template
+			if($templateatual != $template) {
+				//Pegar propriedades atuais
+				$website->getWebsite();
+
+				//Subdominio
+				$objsubdominio = new SubdominioModel();
+				$objsubdominio->setCodigo($website->getSubdominio());
+				$objsubdominio->getSubdominio();
+				$subdominiotxt = $objsubdominio->getDescricao();
+				
+				//Limpar pasta
+				Helpers::recursiveRemoveDirectory('../clientes/'.$subdominiotxt.'');
+
+				//Criar template para o cliente
+				$templates = new Template();
+				$templates->setCodigo($template);
+				$bool = $templates->getTemplateByCodigo();
+
+				//Descompactar Site
+				if($bool) {
+					$zip = new ZipArchive;
+					$res = $zip->open('../templates/zip/'.$templates->getPasta());
+					
+					if ($res === TRUE) {
+				  		$zip->extractTo('../clientes/'.$subdominiotxt.'/');
+				  		$zip->close();
+					}
+					else {
+					}
+				}
+
+				//Gerar Arquivo de configuração
+				$fp = fopen("../clientes/".$subdominiotxt."/config.php", "w");
+				$conteudo = "<?php 
+					\$usuario = $_SESSION[codigo];
+					\$site = $_SESSION[codigowebsite];
+				?>";
+				$escreve = fwrite($fp, $conteudo);
+				fclose($fp);
+			}
+
+			header('Location: /adm/?pg=editarwebsite');
+		break;
+
 
 		case 'adicionartemplate':
 			$nome = $_POST['nome'];

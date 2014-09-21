@@ -166,4 +166,22 @@
 
 			return str_replace(" ", "", trim($string));
 		}
+
+		public static function recursiveRemoveDirectory($path) {   
+	   		$dir = new RecursiveDirectoryIterator($path);
+			   foreach(new RecursiveIteratorIterator($dir) as $file)
+			   {
+				   unlink($file);
+			   }
+
+			   //Remove all subdirectories
+			   foreach($dir as $subDir)
+			   {	
+				//If a subdirectory can't be removed, it's because it has subdirectories, so recursiveRemoveDirectory is called again passing the subdirectory as path
+				if(!@rmdir($subDir)) //@ suppress the warning message
+					{
+					   self::recursiveRemoveDirectory($subDir);
+					}
+			}
+  		 }
 	}

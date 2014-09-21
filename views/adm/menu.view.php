@@ -35,7 +35,7 @@
               <li><a href="/adm/?pg=criarwebsite"><span style="width: 15px;" class="glyphicons glyphicons-circle_ok"></span> Criar Website</a></li>
             <?php } ?>           
             <?php if($_SESSION['websitebool'] && $_SESSION['websiteativo'] == 1 )  { ?>
-              <li><a href="#"><span style="width: 15px;" class="glyphicons glyphicons-edit"></span> Editar Website</a></li>
+              <li><a href="/adm/?pg=editarwebsite"><span style="width: 15px;" class="glyphicons glyphicons-edit"></span> Editar Website</a></li>
               <li><a href="/adm/funcoes.php?ac=desativarsite" onclick="return verificaDesativarSite()"><span class="glyphicons glyphicons-remove_2"></span>Desativar Website</a></li>   
             <?php } elseif ($_SESSION['websitebool'] && $_SESSION['websiteativo'] == 0) {
               ?>

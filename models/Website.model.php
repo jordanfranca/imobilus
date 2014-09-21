@@ -101,6 +101,34 @@
 			parent::Create($objInsert);
 		}
 
+		public function Atualizar(){
+			$objConexao = Website::getConexao();
+			$objUpdate = $objConexao->prepare("UPDATE tb_websites  SET
+												  COD_TEMPLATE = :template,
+												  DSC_TITULO_WEBSITE = :titulo,
+												  DSC_EMAIL_CONTATO = :email,
+												  DSC_TELEFONES = :telefone,
+												  DSC_COR1 = :corprimaria,
+												  DSC_COR2 = :corsecundaria,
+												  IND_PUBLICADO = :publicado,
+												  DSC_SOBRE = :sobre,
+												  DSC_CAMINHO_LOGO = :logo
+
+												  WHERE COD_CADASTRO = :usuario
+												");
+			$objUpdate->bindValue("usuario", self::getUsuario(), PDO::PARAM_INT);
+			$objUpdate->bindValue("template", self::getTemplate(), PDO::PARAM_INT);
+			$objUpdate->bindValue("titulo", self::getTitulo(), PDO::PARAM_STR);
+			$objUpdate->bindValue("logo", self::getLogo(), PDO::PARAM_STR);
+			$objUpdate->bindValue("email", self::getEmail(), PDO::PARAM_STR);
+			$objUpdate->bindValue("telefone", self::getTelefone(), PDO::PARAM_STR);
+			$objUpdate->bindValue("corprimaria", self::getCorprimaria(), PDO::PARAM_STR);
+			$objUpdate->bindValue("corsecundaria", self::getCorsecundaria(), PDO::PARAM_STR);
+			$objUpdate->bindValue("publicado", self::getPublicado(), PDO::PARAM_INT);
+			$objUpdate->bindValue("sobre", self::getSobre(), PDO::PARAM_STR);
+			parent::Create($objUpdate);
+		}
+
 
 		public function getCodigo() {
 		    return $this->codigo;

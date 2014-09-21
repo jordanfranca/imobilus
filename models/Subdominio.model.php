@@ -43,6 +43,28 @@
 				return false;
 		}
 
+		public function getSubdominio() {
+			$objConexao = SubdominioModel::getConexao();
+			$objConsulta = $objConexao->prepare("SELECT  
+										  DSC_SUBDOMINIO, COD_SUBDOMINIO
+										  FROM
+										  tb_subdominio
+										  WHERE 
+										  COD_SUBDOMINIO = :codigo
+			");
+			$objConsulta->bindValue("codigo", self::getCodigo(), PDO::PARAM_STR);
+			$objRetorno = parent::Read($objConsulta);
+			if($objRetorno->rowCount() > 0) {
+				foreach ($objRetorno->fetchAll() as $arrResult) {
+					self::setCodigo($arrResult['COD_SUBDOMINIO']);
+					self::setDescricao($arrResult['DSC_SUBDOMINIO']);
+				}
+				return true;
+			}
+			else
+				return false;
+		}
+
 
 		
 

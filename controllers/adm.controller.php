@@ -23,6 +23,19 @@
 			require("../views/adm/criarwebsite.view.php");
 		}
 
+		public function editarwebsite() {
+			$template = new Template();
+			$templates = $template->getTemplates();
+			$website = new Website();
+			$website->setUsuario($_SESSION['codigo']);
+			$boolwebsite = $website->getWebsite();
+
+			if($boolwebsite)
+				require("../views/adm/editarwebsite.view.php");
+			else
+				self::error();
+		}
+
 		public function template() {
 			$template = new Template();
 			$templates = $template->getTemplates();
