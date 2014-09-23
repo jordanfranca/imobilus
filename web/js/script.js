@@ -42,3 +42,15 @@ $(document).ready(function(){
 		return false;
 	});
 });
+
+function validarForm(numeroform) {
+        var elementos = document.forms[numeroform].elements.length;
+        for (var i = 0; i <= elementos; i++) {
+            if(document.forms[numeroform].elements[i].value == '' || document.forms[numeroform].elements[i].value == 0) {
+                alert('Preencha este campo obrigatório!');
+                document.forms[numeroform].elements[i].focus();
+                return false;
+            }
+        }
+        return true;
+}

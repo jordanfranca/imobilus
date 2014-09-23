@@ -10,6 +10,7 @@
     </div>
     <div class="container">
       <div class="row">
+        <?php require("../views/adm/alertbox.view.php"); ?>
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading">

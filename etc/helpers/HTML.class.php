@@ -73,4 +73,14 @@
 			';
 			return $strCombo;
 		}
+
+		//Retorna Mensagens padrões
+		//Tipos de mensagem: 'alert-sucess, alert-danger, alert-warning, alert-info'
+		public static function mesageDefaultAdm($strMesage, $strType) {
+			return $strHtml = '
+				<p class="alert '.$strType.'">
+				  '.$strMesage.'
+				</p>		
+			';
+		}
 	}

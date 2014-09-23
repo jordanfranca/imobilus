@@ -20,7 +20,7 @@
 				<input class="text-field" required type="password" placeholder="Senha" name="senha" /><br />
 				<a href="#" class="forgot-password left">Esqueceu sua senha?</a>
 				<input class="button-form" type="reset" value="Limpar" />
-				<input class="button-form" type="submit" value="Enviar" />
+				<input class="button-form" type="submit" value="Enviar" onclick="return validarForm(0);" />
 			</form>
 			<span>Ainda não é usuário?</span><a class="forgot-password" href="/cadastro">Criar conta</a>
 		</div>

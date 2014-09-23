@@ -10,11 +10,12 @@
       </ol>
     </div>
     <div class="container">
+      <?php require("../views/adm/alertbox.view.php"); ?>
       <div class="row">
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading">
-                  <div class="panel-title"> <i class="fa fa-pencil"></i>Criar um website</div>
+                  <div class="panel-title"> <i class="fa fa-pencil"></i>Editar website</div>
                 </div>
                 <div class="panel-body">
                   <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="/adm/funcoes.php?ac=editarwebsite">

@@ -8,7 +8,7 @@
     </div>
     <div id="sidebar-menu">
       <ul class="nav sidebar-nav">
-        <li class="active"><a href="/adm/index.php?pg=painel"><span class="glyphicons glyphicons-sort"></span><span class="sidebar-title">Painel</span></a></li>
+        <li class="active"><a href="/adm/?pg=painel"><span class="glyphicons glyphicons-sort"></span><span class="sidebar-title">Painel</span></a></li>
         <li> <a class="accordion-toggle" href="#resources2"><span class="glyphicons glyphicons-adress_book"></span><span class="sidebar-title">Conta</span><span class="caret"></span></a>
           <ul id="resources2" class="nav sub-nav">
             <li><a href="/adm/?pg=editarconta"><span style="width: 15px;" class="glyphicons glyphicons-edit"></span> Editar Conta</a></li>

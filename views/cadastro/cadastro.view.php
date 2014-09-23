@@ -19,9 +19,10 @@
 				<input class="text-field" required type="text" placeholder="Nome" name="nome" /><br />
 				<input class="text-field" required type="text" placeholder="E-mail" name="email" /><br />
 				<input class="text-field" required type="password" placeholder="Senha" name="senha" /><br />
+				<input class="text-field" required type="password" placeholder="Repita novamente a senha" name="senha2" /><br />
 				<input class="text-field" required type="text" placeholder="Creci" name="creci" /><br />
 				<input class="button-form" type="reset" value="Limpar" />
-				<input class="button-form" type="submit" value="Enviar" />
+				<input class="button-form" type="submit" value="Enviar" onclick="return validarForm(0);" />
 			</form>
 		</div>
 	</div>

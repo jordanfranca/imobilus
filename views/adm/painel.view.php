@@ -9,6 +9,7 @@
     </div>
     <div class="container">
       <div class="row">
+        <?php require("../views/adm/alertbox.view.php"); ?>
         <?php if($_SESSION['websitebool'] && $_SESSION['websiteativo'] == 1) { ?>
         <div class="col-md-12">
               <div class="panel">

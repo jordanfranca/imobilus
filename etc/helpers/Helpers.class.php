@@ -78,7 +78,7 @@
 		}
 
 		/* Helper para fotos */
-		public static function fotos($foto, $tamanho, $pasta) {
+		public static function fotos($foto, $tamanho, $pasta, $pagina = 'painel') {
 			$permissao = array('image/jpeg', 'image/jpg');
 			$fotos = $foto;
 			if(in_array($fotos['type'], $permissao)){
@@ -91,7 +91,8 @@
 			   return $newName;
 			 }
 			 else {
-				header("Location: painel.php?erro=true");
+			 	$msg = base64_encode("São aceitas apenas imagens no formato .jpg para o site, tente novamente!");
+				header("Location: /adm/?pg=".$pagina."&confirm=2&msg=".$msg);
 			 }
 		}		
 
