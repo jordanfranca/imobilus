@@ -20,10 +20,25 @@
 	//Sessao
 	session_start();
 
+	//Pega a ação do usuário
 	$action = $_GET['ac'];
 
 	switch ($action) {
 		case 'addSlide':
+			//Valida posts
+			$boolPosts = false;
+			$msgErro   = 'Ocorreu um erro ao enviar o formulário por favor preencha o(s) campo(s) obrigatório(s) : ';
+
+			//Pegando get de post
+			if($_FILES['slide']['tmp_name'] == '') {
+				$msgErro .= 'Slide';
+				$boolPosts = true;
+			}
+
+			if($boolPosts)
+				header('Location: /adm/?pg=editarwebsite&confirm=2&msg='.base64_encode($msgErro));
+				
+			else {
 				$slide = $_FILES['slide'];
 				$reslide = Helpers::fotos($slide, 800, "../web/storage/slides", 'slides');
 				$canvas = new Canvas();
@@ -41,22 +56,29 @@
 
 				$msg = base64_encode("Slide inserido com sucesso!");
 				header('Location: /adm/?pg=slides&confirm=1&msg='.$msg);
-			break;
+			}
+		break;
 
 		case 'excluirslide':
-			$id = (int) $_GET['id'];
-			$foto = $_GET['foto'];
-			$objSlide = new Slide();
-			$objSlide->setCodigo($id);
-			$objSlide->Deletar();
-
-			if(unlink("../web/storage/slides/".$foto)) {
-				$msg = base64_encode("Slide excluido com sucesso!");
-				header('Location: /adm/?pg=slides&confirm=1&msg='.$msg);
+			if(!(isset($_GET['id']))) {
+				$msg = base64_encode("Ocorreu um erro ao tentar excluir o slide, tente novamente!");
+				header('Location: /adm/?pg=slides&confirm=2&msg='.$msg);
 			}
 			else {
-				$msg = base64_encode("Ocorreu um erro ao excluir seu slide, tente novamente!");
-				header('Location: /adm/?pg=slides&confirm=2&msg='.$msg);
+				$id = (int) $_GET['id'];
+				$foto = $_GET['foto'];
+				$objSlide = new Slide();
+				$objSlide->setCodigo($id);
+				$objSlide->Deletar();
+
+				if(unlink("../web/storage/slides/".$foto)) {
+					$msg = base64_encode("Slide excluido com sucesso!");
+					header('Location: /adm/?pg=slides&confirm=1&msg='.$msg);
+				}
+				else {
+					$msg = base64_encode("Ocorreu um erro ao excluir seu slide, tente novamente!");
+					header('Location: /adm/?pg=slides&confirm=2&msg='.$msg);
+				}
 			}
 		break;
 
@@ -185,7 +207,7 @@
 				$boolPosts = true;
 			}
 
-			if($_FILES['publicado']) {
+			if($_FILES['logo']['tmp_name'] == '') {
 				$msgErro .= 'Logo, ';
 				$boolPosts = true;
 			}
@@ -525,12 +547,14 @@
 				$msg = base64_encode("Ocorreu um erro ao tentar desativar o template, tente novamente!");
 				header('Location: /adm/?pg=template&confirm=2&msg='.$msg);
 			}
-			$id = (int) $_GET['id'];
-			$template->setCodigo($id);
-			$template->desativarTemplate();
+			else {
+				$id = (int) $_GET['id'];
+				$template->setCodigo($id);
+				$template->desativarTemplate();
 
-			$msg = base64_encode("Template desativado com sucesso!");
-			header('Location: /adm/?pg=template&confirm=1&msg='.$msg);
+				$msg = base64_encode("Template desativado com sucesso!");
+				header('Location: /adm/?pg=template&confirm=1&msg='.$msg);
+			}
 		break;
 
 		//Ativar Template
@@ -540,12 +564,14 @@
 				$msg = base64_encode("Ocorreu um erro ao tentar ativar o template, tente novamente!");
 				header('Location: /adm/?pg=template&confirm=2&msg='.$msg);
 			}
-			$id = (int) $_GET['id'];
-			$template->setCodigo($id);
-			$template->ativarTemplate();
+			else {
+				$id = (int) $_GET['id'];
+				$template->setCodigo($id);
+				$template->ativarTemplate();
 
-			$msg = base64_encode("Template ativado com sucesso");
-			header('Location: /adm/?pg=template&confirm=1&msg='.$msg);
+				$msg = base64_encode("Template ativado com sucesso");
+				header('Location: /adm/?pg=template&confirm=1&msg='.$msg);
+			}
 		break;
 
 		//Default
