@@ -14,6 +14,7 @@ require("../models/Cadastro.model.php");
 require("../models/Slide.model.php");
 require("../models/Website.model.php");
 require("../models/Template.model.php");
+require("../models/Imovel.model.php");
 require("../etc/helpers/Helpers.class.php");
 require("../etc/class/Email.class.php");
 require("../etc/phpmailer/phpmailer.inc.php");

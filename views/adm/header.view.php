@@ -91,7 +91,7 @@ function verificaDesativarConta() {
 <!-- Start: Header -->
 <header class="navbar navbar-fixed-top">
   <div class="pull-left"> <a class="navbar-brand" href="dashboard.html">
-    <div class="navbar-logo"><img src="img/logos/logo-red.png" class="img-responsive" alt="logo" /></div>
+    <div class="navbar-logo"><img src="/web/img/adm-images/logo.png" class="img-responsive" alt="logo" /></div>
     </a> </div>
   <div class="pull-right header-btns">
     <div class="btn-group user-menu">

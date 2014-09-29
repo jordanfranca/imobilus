@@ -12,16 +12,17 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <?php require("../views/adm/alertbox.view.php"); ?>
             <div class="panel">
                 <div class="panel-heading">
                   <div class="panel-title"> <i class="fa fa-pencil"></i>Adicionar um imóvel</div>
                 </div>
                 <div class="panel-body">
-                  <form class="form-horizontal" role="form" method="POST" action="/adm/funcoes.php?ac=addCategoria">
+                  <form method="POST" class="form-horizontal" role="form" enctype="multipart/form-data"  action="/adm/funcoes.php?ac=addimovel">
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Referência: </label>
                       <div class="col-lg-10">
-                        <input type="text" id="inputStandard" name="descricao" value="" class="form-control" placeholder="" required>
+                        <input type="text" id="inputStandard" name="referencia" value="" class="form-control" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">
@@ -67,38 +68,44 @@
                       </div>
                     </div>
                     <div class="form-group">
+                      <label for="inputStandard" class="col-lg-2 control-label">Estado:  </label>
+                      <div class="col-lg-10">
+                        <input type="text" id="inputStandard" name="estado" class="form-control" placeholder="Digite..." required>
+                      </div>
+                    </div>
+                    <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Cidade:  </label>
                       <div class="col-lg-10">
-                        <input type="password" id="inputStandard" name="descricao" class="form-control" placeholder="Digite..." required>
+                        <input type="text" id="inputStandard" name="cidade" class="form-control" placeholder="Digite..." required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Bairro:  </label>
                       <div class="col-lg-10">
-                        <input type="password" id="inputStandard" name="descricao" class="form-control" placeholder="Digite..." required>
+                        <input type="text" id="inputStandard" name="bairro" class="form-control" placeholder="Digite..." required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Preço:  </label>
                       <div class="col-lg-10">
-                        <input type="password" id="inputStandard" name="descricao" class="form-control" placeholder="Digite..." required>
+                        <input type="text" id="inputStandard" name="preco" class="form-control" placeholder="Digite..." required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Descrição:  </label>
                       <div class="col-lg-10">
-                        <textarea class="ckeditor editor1" id="editor1" name="garantia" rows="14" required></textarea>
+                        <textarea class="ckeditor editor1" id="editor1" name="descricao" rows="14"></textarea>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Foto principal:  </label>
                       <div class="col-lg-10">
-                        <input type="file" id="inputStandard" name="descricao"  placeholder="Digite..." required>
+                        <input type="file" id="inputStandard" name="foto"  placeholder="Digite..." required>
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-md-12 text-right">
-                        <input class="submit btn btn-blue" type="submit" value="Editar">
+                        <input class="submit btn btn-blue" type="submit" value="Salvar">
                       </div>
                     </div>
                   </form>

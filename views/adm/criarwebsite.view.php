@@ -12,6 +12,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <?php require("../views/adm/alertbox.view.php"); ?>
             <div class="panel">
                 <div class="panel-heading">
                   <div class="panel-title"> <i class="fa fa-pencil"></i>Criar um website</div>

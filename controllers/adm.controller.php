@@ -6,6 +6,9 @@
 		}
 		
 		public function painel() {
+			$imovel = new Imovel();
+			$imovel->setWebsite($_SESSION['codigowebsite']);
+			$boolimovel = $imovel->getImoveis();
 			require("../views/adm/painel.view.php");
 		}
 		

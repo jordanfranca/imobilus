@@ -9,6 +9,7 @@
 	require("../models/Subdominio.model.php");
 	require("../models/Website.model.php");
 	require("../models/Template.model.php");
+	require("../models/Imovel.model.php");
 	require("../etc/class/Canvas.class.php");
 	require("../etc/class/Subdominio.class.php");
 	require("../etc/apis/cpanel/xmlapi.php");
@@ -24,6 +25,167 @@
 	$action = $_GET['ac'];
 
 	switch ($action) {
+
+		case 'addimovel':
+			//Valida posts
+			$boolPosts = false;
+			$msgErro   = 'Ocorreu um erro ao enviar o formulário por favor preencha o(s) campo(s) obrigatório(s) : ';
+
+			//Pegando get de post
+			if($_POST['referencia'] == '') {
+				$msgErro .= 'Referencia, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['quartos'] == '') {
+				$msgErro .= 'Quartos, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['salas'] == '') {
+				$msgErro .= 'Salas, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['banheiros'] == '') {
+				$msgErro .= 'Banheiros, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['dormitorios'] == '') {
+				$msgErro .= 'Dormitorios, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['mobilia'] == '') {
+				$msgErro .= 'Mobilia, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['tipoimovel'] == '') {
+				$msgErro .= 'Tipo do imovel, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['tiponegocio'] == '') {
+				$msgErro .= 'Tipo de Negocio, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['bairro'] == '') {
+				$msgErro .= 'Bairro, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['preco'] == '') {
+				$msgErro .= 'Preco, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['descricao'] == '') {
+				$msgErro .= 'Descricao, ';
+				$boolPosts = true;
+			}
+
+			if($_FILES['foto']['tmp_name'] == '') {
+				$msgErro .= 'Foto, ';
+				$boolPosts = true;
+			}
+
+			if($boolPosts)
+				header('Location: /adm/?pg=adicionarimovel&confirm=2&msg='.base64_encode($msgErro));
+
+			else {
+				//Pegando posts
+				$referencia = $_POST['referencia'];
+				$quartos = $_POST['quartos'];
+				$salas = $_POST['salas'];
+				$banheiros = $_POST['banheiros'];
+				$dormitorios = $_POST['dormitorios'];
+				$mobilia = $_POST['mobilia'];
+				$tipoimovel = $_POST['tipoimovel'];
+				$tiponegocio = $_POST['tiponegocio'];
+				$bairro = $_POST['bairro'];
+				$preco = $_POST['preco'];
+				$descricao = $_POST['descricao'];
+				$foto = $_FILES['foto'];
+
+				//Faz Foto Do site
+				$refoto = Helpers::fotos($foto, 667, "../web/storage/imoveis/foto", 'adicionarimovel');
+
+				//Faz foto no formato de templates
+				$canvas = new Canvas();
+				$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+				$canvas->redimensiona(667,430,'crop');
+				$canvas->grava("../web/storage/imoveis/foto/".$refoto."", 100);
+				$canvas->resetar();	
+
+				$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+				$canvas->redimensiona(225,130,'crop');
+				$canvas->grava("../web/storage/imoveis/mini-home/".$refoto."", 100);
+				$canvas->resetar();	
+
+				$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+				$canvas->redimensiona(145,109,'crop');
+				$canvas->grava("../web/storage/imoveis/mini-imovel/".$refoto."", 100);
+				$canvas->resetar();	
+
+				//Imovel
+				$imovel = new Imovel();
+				$imovel->setReferencia($referencia);
+				$imovel->setQuartos($quartos);
+				$imovel->setSalas($salas);
+				$imovel->setBanheiros($banheiros);
+				$imovel->setDormitorios($dormitorios);
+				$imovel->setMobilia($mobilia);
+				$imovel->setTipo($tipoimovel);
+				$imovel->setNegocio($tiponegocio);
+				$imovel->setBairro($bairro);
+				$imovel->setPreco($preco);
+				$imovel->setDescricao($descricao);
+				$imovel->setFoto($refoto);
+				$imovel->setAtivo(1);
+				$imovel->setWebsite($_SESSION['codigowebsite']);
+				$imovel->setUrl("teste");
+
+				$imovel->Inserir();
+
+				$msg = base64_encode("Imovel inserido com sucesso!");
+				header('Location: /adm/?pg=painel&confirm=1&msg='.$msg);
+			}
+		break;
+
+		case 'excluirimovel':
+			if(!(isset($_GET['id']))) {
+				$msg = base64_encode("Ocorreu um erro ao tentar excluir o imóvel, tente novamente!");
+				header('Location: /adm/?pg=painel&confirm=2&msg='.$msg);
+			}
+			else {
+				$id = (int) $_GET['id'];
+				$foto = base64_decode($_GET['foto']);
+				$imovel = new Imovel();
+				$imovel->setCodigo($id);
+
+				if(!unlink("../web/storage/imoveis/foto/".$foto)) {
+					$msg = base64_encode("Ocorreu um erro ao excluir seu imóvel, tente novamente!");
+					header('Location: /adm/?pg=painel&confirm=2&msg='.$msg);	
+				}
+				elseif (!unlink("../web/storage/imoveis/mini-home/".$foto)) {
+					$msg = base64_encode("Ocorreu um erro ao excluir seu imóvel, tente novamente!");
+					header('Location: /adm/?pg=painel&confirm=2&msg='.$msg);	
+				}
+				elseif (!unlink("../web/storage/imoveis/mini-imovel/".$foto)) {
+					$msg = base64_encode("Ocorreu um erro ao excluir seu imóvel, tente novamente!");
+					header('Location: /adm/?pg=painel&confirm=2&msg='.$msg);	
+				}
+				else {
+					$imovel->Deletar();
+					$msg = base64_encode("Imóvel excluido com sucesso!");
+					header('Location: /adm/?pg=painel&confirm=1&msg='.$msg);
+				}
+			}
+		break;
+
 		case 'addSlide':
 			//Valida posts
 			$boolPosts = false;
@@ -40,12 +202,12 @@
 				
 			else {
 				$slide = $_FILES['slide'];
-				$reslide = Helpers::fotos($slide, 800, "../web/storage/slides", 'slides');
+				$reslide = Helpers::fotos($slide, 1000, "../web/storage/slides", 'slides');
 				$canvas = new Canvas();
 
 				//Faz foto no formato de templates
 				$canvas->carrega("../web/storage/slides/".$reslide."");
-				$canvas->redimensiona(800,400,'crop');
+				$canvas->redimensiona(1000,300,'crop');
 				$canvas->grava("../web/storage/slides/".$reslide."", 100);
 				$canvas->resetar();	
 
