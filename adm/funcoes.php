@@ -3,6 +3,7 @@
 	require('../models/CRUD.model.php');
 	require('../etc/class/Conexao.class.php');
 	require("../etc/helpers/Helpers.class.php");
+	require("../etc/helpers/HTML.class.php");
 	require("../etc/class/Email.class.php");
 	require("../models/Slide.model.php");
 	require("../models/Cadastro.model.php");
@@ -10,6 +11,10 @@
 	require("../models/Website.model.php");
 	require("../models/Template.model.php");
 	require("../models/Imovel.model.php");
+	require("../models/Estados.model.php");
+	require("../models/Cidades.model.php");
+	require("../models/Bairros.model.php");
+	require("../models/Fotos.model.php");
 	require("../etc/class/Canvas.class.php");
 	require("../etc/class/Subdominio.class.php");
 	require("../etc/apis/cpanel/xmlapi.php");
@@ -155,8 +160,143 @@
 			}
 		break;
 
+		case 'editarimovel':
+			//Valida posts
+			$boolPosts = false;
+			$msgErro   = 'Ocorreu um erro ao enviar o formulário por favor preencha o(s) campo(s) obrigatório(s) : ';
+
+			//Pegando get de post
+			if($_POST['referencia'] == '') {
+				$msgErro .= 'Referencia, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['quartos'] == '') {
+				$msgErro .= 'Quartos, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['salas'] == '') {
+				$msgErro .= 'Salas, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['banheiros'] == '') {
+				$msgErro .= 'Banheiros, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['dormitorios'] == '') {
+				$msgErro .= 'Dormitorios, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['mobilia'] == '') {
+				$msgErro .= 'Mobilia, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['tipoimovel'] == '') {
+				$msgErro .= 'Tipo do imovel, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['tiponegocio'] == '') {
+				$msgErro .= 'Tipo de Negocio, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['bairro'] == '') {
+				$msgErro .= 'Bairro, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['preco'] == '') {
+				$msgErro .= 'Preco, ';
+				$boolPosts = true;
+			}
+
+			if($_POST['descricao'] == '') {
+				$msgErro .= 'Descricao, ';
+				$boolPosts = true;
+			}
+
+			if((int) $_GET['id'] == 0) {
+				$msgErro .= 'Identificador, ';
+				$boolPosts = true;
+			}
+
+
+			if($boolPosts)
+				header('Location: /adm/?pg=adicionarimovel&confirm=2&msg='.base64_encode($msgErro));
+
+			else {
+				//Pegando posts
+				$referencia = $_POST['referencia'];
+				$quartos = $_POST['quartos'];
+				$salas = $_POST['salas'];
+				$banheiros = $_POST['banheiros'];
+				$dormitorios = $_POST['dormitorios'];
+				$mobilia = $_POST['mobilia'];
+				$tipoimovel = $_POST['tipoimovel'];
+				$tiponegocio = $_POST['tiponegocio'];
+				$bairro = $_POST['bairro'];
+				$preco = $_POST['preco'];
+				$descricao = $_POST['descricao'];
+				$foto = $_FILES['foto'];
+				$id = (int)$_GET['id'];
+				//Faz Foto Do site
+				if($_FILES['foto']['tmp_name'] == '') 
+					$refoto = base64_decode($_GET['foto']);
+				else {
+					$refoto = Helpers::fotos($foto, 667, "../web/storage/imoveis/foto", 'adicionarimovel');
+
+					//Faz foto no formato de templates
+					$canvas = new Canvas();
+					$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+					$canvas->redimensiona(667,430,'crop');
+					$canvas->grava("../web/storage/imoveis/foto/".$refoto."", 100);
+					$canvas->resetar();	
+
+					$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+					$canvas->redimensiona(225,130,'crop');
+					$canvas->grava("../web/storage/imoveis/mini-home/".$refoto."", 100);
+					$canvas->resetar();	
+
+					$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+					$canvas->redimensiona(145,109,'crop');
+					$canvas->grava("../web/storage/imoveis/mini-imovel/".$refoto."", 100);
+					$canvas->resetar();	
+				}
+
+				//Imovel
+				$imovel = new Imovel();
+				$imovel->setReferencia($referencia);
+				$imovel->setQuartos($quartos);
+				$imovel->setSalas($salas);
+				$imovel->setBanheiros($banheiros);
+				$imovel->setDormitorios($dormitorios);
+				$imovel->setMobilia($mobilia);
+				$imovel->setTipo($tipoimovel);
+				$imovel->setNegocio($tiponegocio);
+				$imovel->setBairro($bairro);
+				$imovel->setPreco($preco);
+				$imovel->setDescricao($descricao);
+				$imovel->setFoto($refoto);
+				$imovel->setAtivo(1);
+				$imovel->setWebsite($_SESSION['codigowebsite']);
+				$imovel->setUrl("teste");
+				$imovel->setCodigo($id);
+
+				$imovel->Atualizar();
+
+				$msg = base64_encode("Imovel atualizado com sucesso!");
+				header('Location: /adm/?pg=painel&confirm=1&msg='.$msg);
+			}
+		break;
+
 		case 'excluirimovel':
-			if(!(isset($_GET['id']))) {
+			if(!(isset($_GET['id'])) || !(isset($_GET['foto']))) {
 				$msg = base64_encode("Ocorreu um erro ao tentar excluir o imóvel, tente novamente!");
 				header('Location: /adm/?pg=painel&confirm=2&msg='.$msg);
 			}
@@ -165,7 +305,6 @@
 				$foto = base64_decode($_GET['foto']);
 				$imovel = new Imovel();
 				$imovel->setCodigo($id);
-
 				if(!unlink("../web/storage/imoveis/foto/".$foto)) {
 					$msg = base64_encode("Ocorreu um erro ao excluir seu imóvel, tente novamente!");
 					header('Location: /adm/?pg=painel&confirm=2&msg='.$msg);	
@@ -179,6 +318,11 @@
 					header('Location: /adm/?pg=painel&confirm=2&msg='.$msg);	
 				}
 				else {
+					//Deletar Fotos
+					$fotos = new Fotos();
+					$fotos->setImovel($id);
+					$fotos->DeletarByImovel();
+
 					$imovel->Deletar();
 					$msg = base64_encode("Imóvel excluido com sucesso!");
 					header('Location: /adm/?pg=painel&confirm=1&msg='.$msg);
@@ -218,6 +362,80 @@
 
 				$msg = base64_encode("Slide inserido com sucesso!");
 				header('Location: /adm/?pg=slides&confirm=1&msg='.$msg);
+			}
+		break;
+
+		case 'excluirfoto':
+			//Valida posts
+			$boolPosts = false;
+			$msgErro   = 'Ocorreu um erro ao enviar o formulário por favor preencha o(s) campo(s) obrigatório(s) : ';
+
+			if((int)$_GET['id'] == 0) {
+				$msgErro .= 'Codigo';
+				$boolPosts = true;
+			}
+
+			if($boolPosts)
+				header('Location: /adm/?pg=adicionarfotosimovel&confirm=2&msg='.base64_encode($msgErro));
+
+			else {
+				$id = (int) $_GET['id'];
+				//Deletar Fotos
+				$fotos = new Fotos();
+				$fotos->setCodigo($id);
+				$fotos->Deletar();
+
+				header('Location: /adm/?pg=adicionarfotosimovel&confirm=1&msg='.base64_encode('Foto excluida com sucesso!').'&id='.$id);
+			}
+		break;
+
+		case 'addfoto':
+			//Valida posts
+			$boolPosts = false;
+			$msgErro   = 'Ocorreu um erro ao enviar o formulário por favor preencha o(s) campo(s) obrigatório(s) : ';
+
+			//Pegando get de post
+			if($_FILES['foto']['tmp_name'] == '') {
+				$msgErro .= 'Foto';
+				$boolPosts = true;
+			}
+
+			if((int)$_GET['id'] == 0) {
+				$msgErro .= ', Codigo';
+				$boolPosts = true;
+			}
+
+			if($boolPosts)
+				header('Location: /adm/?pg=adicionarfotosimovel&confirm=2&msg='.base64_encode($msgErro));
+				
+			else {
+				$foto = $_FILES['foto'];
+				$id = (int) $_GET['id'];
+				$refoto = Helpers::fotos($foto, 667, "../web/storage/imoveis/foto", 'adicionarimovel');
+				//Faz foto no formato de templates
+				$canvas = new Canvas();
+				$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+				$canvas->redimensiona(667,430,'crop');
+				$canvas->grava("../web/storage/imoveis/foto/".$refoto."", 100);
+				$canvas->resetar();	
+
+				$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+				$canvas->redimensiona(225,130,'crop');
+				$canvas->grava("../web/storage/imoveis/mini-home/".$refoto."", 100);
+				$canvas->resetar();	
+
+				$canvas->carrega("../web/storage/imoveis/foto/".$refoto."");
+				$canvas->redimensiona(145,109,'crop');
+				$canvas->grava("../web/storage/imoveis/mini-imovel/".$refoto."", 100);
+				$canvas->resetar();	
+
+				$foto = new Fotos();
+				$foto->setFoto($refoto);
+				$foto->setImovel($id);
+				$foto->Inserir();
+
+				$msg = base64_encode("Foto inserida com sucesso!");
+				header('Location: /adm/?pg=adicionarfotosimovel&confirm=1&msg='.$msg.'&id='.$id);
 			}
 		break;
 
@@ -734,6 +952,18 @@
 				$msg = base64_encode("Template ativado com sucesso");
 				header('Location: /adm/?pg=template&confirm=1&msg='.$msg);
 			}
+		break;
+
+		//Get Cidades
+		case 'getcidades':
+			$id = (int) $_GET['id'];
+			echo HTML::getCidades('cidades', 'class="form-control"', $id, new Cidades());
+		break;
+
+		//Get Bairros
+		case 'getbairros':
+			$id = (int) $_GET['id'];
+			echo HTML::getBairros('bairro', 'class="form-control"', $id);
 		break;
 
 		//Default

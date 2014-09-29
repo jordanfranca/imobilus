@@ -13,7 +13,39 @@
 		}
 		
 		public function adicionarimovel() {
+			$estado = new Estados();
+            $bool = $estado->getEstados();
 			require("../views/adm/adicionarimovel.view.php");
+		}
+
+		public function adicionarfotosimovel() {
+			$imovel = new Imovel();
+			$id = (int) $_GET['id'];
+			$imovel->setWebsite($_SESSION['codigowebsite']);
+			$imovel->setCodigo($id);
+			$foto = new Fotos();
+			$foto->setImovel($id);
+			$bool = $imovel->getImoveisID();
+			if($bool != false) {
+				$boolfotos = $foto->getFotos();
+				require("../views/adm/adicionarfotosimovel.view.php");
+			}
+			else
+				self::error();
+		}
+
+
+		public function editarimovel(){
+			$imovel = new Imovel();
+			$id = (int) $_GET['id'];
+			$imovel->setWebsite($_SESSION['codigowebsite']);
+			$imovel->setCodigo($id);
+
+			$bool = $imovel->getImoveisID();
+			if($bool != false)
+				require("../views/adm/editarimovel.view.php");
+			else
+				self::error();
 		}
 
 		public function adicionarfoto() {

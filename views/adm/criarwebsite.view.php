@@ -46,13 +46,13 @@
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Cor Primária:  </label>
                       <div class="col-lg-10">
-                        <input type="text" name="corprimaria" class="form-control colorpicker margin-top-none" id="cp" placeholder="#37a8e8" value="#37a8e8">
+                        <input type="text" name="corprimaria" class="form-control margin-top-none" id="cp" placeholder="#37a8e8" value="#37a8e8">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Cor Secundária:  </label>
                       <div class="col-lg-10">
-                        <input type="text" name="corsecundaria" class="form-control colorpicker margin-top-none" id="cp" placeholder="#37a8e8" value="#37a8e8">
+                        <input type="text" name="corsecundaria" class="form-control margin-top-none" id="cs" placeholder="#37a8e8" value="#37a8e8">
                       </div>
                     </div>
                     <div class="form-group">
@@ -107,3 +107,16 @@
     </div>
   </section>
   <!-- End: Content --> 
+  <script type="text/javascript">
+   $('#cp, #cs').colpick({
+    layout:'hex',
+    submit:0,
+    colorScheme:'dark',
+    onChange:function(hsb,hex,rgb,el,bySetColor) {
+        // Fill the text box just if the color was set using the picker, and not the colpickSetColor function.
+        if(!bySetColor) $(el).val('#'+hex);
+          }
+        }).keyup(function(){
+          $(this).colpickSetColor(this.value);
+        });
+  </script>

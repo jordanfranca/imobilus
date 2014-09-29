@@ -1,4 +1,3 @@
-
 <!-- Start: Content -->
   <section id="content">
     <div id="topbar">
@@ -6,7 +5,7 @@
         <li><a href="#"><i class="fa fa-home"></i></a></li>
         <li><a href="/" target="_blank">Home</a></li>
         <li>Painel</li>
-        <li class="active">Adicionar imóvel</li>
+        <li class="active">Editar imóvel</li>
       </ol>
     </div>
     <div class="container">
@@ -15,56 +14,56 @@
           <?php require("../views/adm/alertbox.view.php"); ?>
             <div class="panel">
                 <div class="panel-heading">
-                  <div class="panel-title"> <i class="fa fa-pencil"></i>Adicionar um imóvel</div>
+                  <div class="panel-title"> <i class="fa fa-pencil"></i>Editar imóvel</div>
                 </div>
                 <div class="panel-body">
-                  <form method="POST" class="form-horizontal" role="form" enctype="multipart/form-data"  action="/adm/funcoes.php?ac=addimovel">
+                  <form method="POST" class="form-horizontal" role="form" enctype="multipart/form-data"  action="/adm/funcoes.php?ac=editarimovel&id=<?php echo $id; ?>&foto=<?php echo base64_encode($imovel->getFoto()); ?>">
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Referência: </label>
                       <div class="col-lg-10">
-                        <input type="text" id="inputStandard" name="referencia" value="" class="form-control" placeholder="" required>
+                        <input type="text" id="inputStandard" value="<?php echo $imovel->getReferencia(); ?>" name="referencia" value="" class="form-control" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Quartos: </label>
                       <div class="col-lg-10">
-                        <?php echo HTML::getQuantidades('quartos', 'class="form-control"'); ?>
+                        <?php echo HTML::getQuantidades('quartos', 'class="form-control"', 10, $imovel->getQuartos()); ?>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Salas:  </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('salas', 'class="form-control"'); ?>
+                         <?php echo HTML::getQuantidades('salas', 'class="form-control"', 10, $imovel->getSalas()); ?>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Banheiros: </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('banheiros', 'class="form-control"'); ?>
+                         <?php echo HTML::getQuantidades('banheiros', 'class="form-control"', 10, $imovel->getBanheiros()); ?>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Dormitórios:  </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('dormitorios', 'class="form-control"'); ?>
+                         <?php echo HTML::getQuantidades('dormitorios', 'class="form-control"', 10, $imovel->getDormitorios()); ?>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Mobilia:  </label>
                       <div class="col-lg-10">
-                        <?php echo HTML::optionTrueFalse('mobilia', 'class="form-control"'); ?>
+                        <?php echo HTML::optionTrueFalse('mobilia', 'class="form-control"', $imovel->getMobilia()); ?>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Tipo:  </label>
                       <div class="col-lg-10">
-                        <?php echo HTML::getTipoImovel('tipoimovel', 'class="form-control"'); ?>
+                        <?php echo HTML::getTipoImovel('tipoimovel', 'class="form-control"', $imovel->getTipo()); ?>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Tipo de negócio:  </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getTipoNegocio('tiponegocio', 'class="form-control"'); ?>
+                         <?php echo HTML::getTipoNegocio('tiponegocio', 'class="form-control"', $imovel->getNegocio()); ?>
                       </div>
                     </div>
                     <div class="form-group">
@@ -95,25 +94,25 @@
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Bairro:  </label>
                       <div class="col-lg-10" id="bairro">
-                          <input type="text" id="inputStandard" name="bairro" class="form-control" placeholder="Digite..." required>
+                          <input type="text" id="inputStandard" value="<?php echo $imovel->getBairro(); ?>" name="bairro" class="form-control" placeholder="Digite..." required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Preço:  </label>
                       <div class="col-lg-10">
-                        <input type="text" id="inputStandard" name="preco" class="form-control" placeholder="Digite..." required>
+                        <input type="text" id="inputStandard" value="<?php echo $imovel->getPreco(); ?>" name="preco" class="form-control" placeholder="Digite..." required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Descrição:  </label>
                       <div class="col-lg-10">
-                        <textarea class="ckeditor editor1" id="editor1" name="descricao" rows="14"></textarea>
+                        <textarea class="ckeditor editor1" id="editor1" name="descricao" rows="14"><?php echo $imovel->getDescricao(); ?></textarea>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Foto principal:  </label>
                       <div class="col-lg-10">
-                        <input type="file" id="inputStandard" name="foto"  placeholder="Digite..." required>
+                        <input type="file" id="inputStandard" name="foto"  placeholder="Digite..." >
                       </div>
                     </div>
                     <div class="form-group">

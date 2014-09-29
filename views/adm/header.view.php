@@ -25,6 +25,7 @@
 <link rel="stylesheet" type="text/css" href="/web/js/adm/vendor/plugins/calendar/fullcalendar.css" />
 <link rel="stylesheet" type="text/css" href="/web/js/adm/vendor/plugins/datatables/css/datatables.min.css" />
 <link rel="stylesheet" type="text/css" href="/web/css/adm/animate.css" />
+<link rel="stylesheet" type="text/css" href="/web/js/adm/colpick/css/colpick.css" />
 
 <!-- Theme CSS -->
 <link rel="stylesheet" type="text/css" href="/web/css/adm/theme.css" />
@@ -50,6 +51,36 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="/web/js/adm/colpick/js/colpick.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select#cidadese').change(function() {
+          $('#bairro').html("Carregando...");
+          $.ajax({
+           type: "GET",
+           url: 'funcoes.php?ac=getbairros',
+           data: "id=" + $(this).val(),
+           success: function(data) {
+                $('#bairro').html(data);
+           }
+          });
+        });
+
+        $('#estados').change(function() {
+        $('#cidade').html("Carregando...");
+        $.ajax({
+         type: "GET",
+         url: 'funcoes.php?ac=getcidades',
+         data: "id=" + $(this).val(),
+         success: function(data) {
+              $('#cidade').html(data);
+         }
+       });
+      });
+    });
+     
+  </script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript">

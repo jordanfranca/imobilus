@@ -77,6 +77,48 @@
 			parent::Create($objInsert);
 		}
 
+		public function Atualizar() {
+			$objConexao = Imovel::getConexao();
+			$objUpdate = $objConexao->prepare("UPDATE tb_imoveis 
+												  SET 
+												  COD_BAIRRO = :bairro,
+												  COD_REFERENCIA = :referencia,
+												  IND_ATIVO = :ativo,
+												  DSC_URL_AMIGAVEL= :url,
+												  DSC_IMOVEL = :descricao,
+												  NUM_VALOR = :preco,
+												  QT_QUARTOS = :quartos,
+												  QT_SALAS = :salas,
+												  QT_BANHEIROS = :banheiros,
+												  QT_DORMITORIOS = :dormitorios,
+												  IND_MOBILIA = :mobilia,
+												  IND_TIPO = :tipo,
+												  DSC_FOTO = :foto,
+												  IND_NEGOCIO = :negocio
+										  		  WHERE
+										  		  COD_IMOVEL = :codigo
+										  		  AND 
+										  		  COD_WEBSITE = :website
+										  ");
+			$objUpdate->bindValue("codigo", self::getCodigo(), PDO::PARAM_INT);
+			$objUpdate->bindValue("bairro", self::getBairro(), PDO::PARAM_INT);
+			$objUpdate->bindValue("website", self::getWebsite(), PDO::PARAM_STR);
+			$objUpdate->bindValue("referencia", self::getReferencia(), PDO::PARAM_INT);
+			$objUpdate->bindValue("ativo", self::getAtivo(), PDO::PARAM_INT);
+			$objUpdate->bindValue("url", self::getUrl(), PDO::PARAM_STR);
+			$objUpdate->bindValue("descricao", self::getDescricao(), PDO::PARAM_STR);
+			$objUpdate->bindValue("preco", self::getPreco(), PDO::PARAM_INT);
+			$objUpdate->bindValue("quartos", self::getQuartos(), PDO::PARAM_INT);
+			$objUpdate->bindValue("salas", self::getSalas(), PDO::PARAM_INT);
+			$objUpdate->bindValue("banheiros", self::getBanheiros(), PDO::PARAM_INT);
+			$objUpdate->bindValue("dormitorios", self::getDormitorios(), PDO::PARAM_INT);
+			$objUpdate->bindValue("mobilia", self::getMobilia(), PDO::PARAM_INT);
+			$objUpdate->bindValue("tipo", self::getTipo(), PDO::PARAM_INT);
+			$objUpdate->bindValue("foto", self::getFoto(), PDO::PARAM_STR);
+			$objUpdate->bindValue("negocio", self::getNegocio(), PDO::PARAM_INT);
+			parent::Update($objUpdate);
+		}
+
 		public function getImoveis() {
 			$objConexao = Imovel::getConexao();
 			$objConsulta = $objConexao->prepare("SELECT  
@@ -135,7 +177,7 @@
 												  AND 
 												  COD_IMOVEL = :imovel
 			");
-			$objConsulta->bindValue("website", self::getWebsite(), PDO::PARAM_INT);
+			$objConsulta->bindValue("website", self::getWebsite(), PDO::PARAM_STR);
 			$objConsulta->bindValue("imovel", self::getCodigo(), PDO::PARAM_INT);
 			$objRetorno = parent::Read($objConsulta);
 			if($objRetorno->rowCount() > 0) {
@@ -155,6 +197,7 @@
 					self::setFoto($arrResult['DSC_FOTO']);
 					self::setNegocio($arrResult['IND_NEGOCIO']);
 				}
+				return true;
 			}
 			else
 				return false;

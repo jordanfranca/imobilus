@@ -35,9 +35,9 @@
                                   <tr>
                                     <td><?php echo $array['COD_IMOVEL']; ?></td>
                                     <td><?php echo $array['COD_REFERENCIA']; ?></td>
-                                    <td><a href="#?<?php echo $array['COD_IMOVEL']; ?>">Adicionar Fotos</a></td>
-                                    <td><a href="#?<?php echo $array['COD_IMOVEL']; ?>">Editar</a></td>
-                                    <td><a href="/adm/funcoes.php?ac=excluirimovel&id=<?php echo $array['COD_IMOVEL']; ?>&foto=<?php echo base64_encode($array['DSC_FOTO']); ?>">Excluir</a></td>
+                                    <td><a href="/adm/?pg=adicionarfotosimovel&id=<?php echo $array['COD_IMOVEL']; ?>">Adicionar Fotos</a></td>
+                                    <td><a href="/adm/?pg=editarimovel&id=<?php echo $array['COD_IMOVEL']; ?>">Editar</a></td>
+                                    <td><a href="/adm/funcoes.php?ac=excluirimovel&id=<?php echo $array['COD_IMOVEL']; ?>&foto=<?php echo base64_encode($array['DSC_FOTO']); ?>" onClick="return verificaDeletar();">Excluir</a></td>
                                   </tr>
                                 <?php
                               }
