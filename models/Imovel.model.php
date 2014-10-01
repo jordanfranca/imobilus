@@ -151,6 +151,40 @@
 				return false;
 		}
 
+		public function getImoveisQt($qt) {
+			$objConexao = Imovel::getConexao();
+			$objConsulta = $objConexao->prepare("SELECT  
+												  COD_IMOVEL,
+												  COD_BAIRRO,
+												  COD_WEBSITE,
+												  COD_REFERENCIA,
+												  IND_ATIVO,
+												  DSC_URL_AMIGAVEL,
+												  DSC_IMOVEL,
+												  NUM_VALOR,
+												  QT_QUARTOS,
+												  QT_SALAS,
+												  QT_BANHEIROS,
+												  QT_DORMITORIOS,
+												  IND_MOBILIA,
+												  IND_TIPO,
+												  DSC_FOTO,
+												  IND_NEGOCIO
+												  FROM
+												  tb_imoveis
+												  WHERE 
+												  COD_WEBSITE = :website
+												  ORDER BY COD_IMOVEL DESC
+												  LIMIT $qt
+			");
+			$objConsulta->bindValue("website", self::getWebsite(), PDO::PARAM_INT);
+			$objRetorno = parent::Read($objConsulta);
+			if($objRetorno->rowCount() > 0)
+				return $objRetorno;
+			else
+				return false;
+		}
+
 		public function getImoveisID() {
 			$objConexao = Imovel::getConexao();
 			$objConsulta = $objConexao->prepare("SELECT  

@@ -33,7 +33,7 @@ if($strMetodo == 'login') {
 }
 else {
 	mysql_connect('localhost', 'root', '');
-	mysql_select_db('gts');
+	mysql_select_db('imobilus');
 
 
 	$verifica = new Login();

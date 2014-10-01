@@ -53,7 +53,7 @@
                           <tr>
                             <td><?php echo $array['COD_FOTO'] ?></td>
                             <td><a href="/web/storage/imoveis/foto/<?php echo $array['DSC_CAMINHO_FOTO']; ?>" target="_blank">Clique para ver</a></td>
-                            <td><a href="/adm/funcoes.php?ac=excluirfoto&id=<?php echo $array['COD_FOTO'] ?>&foto=<?php echo $array['DSC_CAMINHO_FOTO']; ?>" onClick="return verificaDeletar();">Excluir</a></td>
+                            <td><a href="/adm/funcoes.php?ac=excluirfoto&id=<?php echo $array['COD_FOTO'] ?>&foto=<?php echo $array['DSC_CAMINHO_FOTO']; ?>&idimovel=<?php echo $id; ?>" onClick="return verificaDeletar();">Excluir</a></td>
                           </tr>
                         <?php } ?>
                     </tbody>

@@ -11,6 +11,28 @@
 		private $strNome;
 		private $strHash;
 		private $boolConfirmacao;
+		private $ativo;
+
+
+		/**
+		 * [description here]
+		 *
+		 * @return [type] [description]
+		 */
+		public function getAtivo() {
+		    return $this->ativo;
+		}
+		
+		/**
+		 * [Description]
+		 *
+		 * @param [type] $newativo [description]
+		 */
+		public function setAtivo($ativo) {
+		    $this->ativo = $ativo;
+		
+		    return $this;
+		}
 		
 		
 		public function getIntCodigo() {
@@ -116,7 +138,8 @@
 										  NUM_CRECI,
 										  DSC_EMAIL,
 										  NOM_USUARIO,
-										  DSC_HASH
+										  DSC_HASH,
+										  IND_ATIVO
 										  FROM
 										  tb_cadastros
 										  WHERE DSC_EMAIL = :str_email
@@ -130,6 +153,7 @@
 					self::setStrHash($arrResult['DSC_HASH']);
 					self::setStrNome($arrResult['NOM_USUARIO']);
 					self::setStrSenha($arrResult['DSC_SENHA']);
+					self::setAtivo($arrResult['IND_ATIVO']);
 				}
 				return true;
 			}
@@ -144,7 +168,8 @@
 										  NUM_CRECI,
 										  DSC_EMAIL,
 										  NOM_USUARIO,
-										  DSC_HASH
+										  DSC_HASH,
+										  IND_ATIVO
 										  FROM 
 										  tb_cadastros
 										  WHERE COD_CADASTRO = :cod_cadastro
@@ -158,6 +183,7 @@
 					self::setStrHash($arrResult['DSC_HASH']);
 					self::setStrNome($arrResult['NOM_USUARIO']);
 					self::setStrSenha($arrResult['DSC_SENHA']);
+					self::setAtivo($arrResult['IND_ATIVO']);
 				}
 				return true;
 			}

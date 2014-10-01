@@ -380,12 +380,13 @@
 
 			else {
 				$id = (int) $_GET['id'];
+				$idimovel = (int) $_GET['idimovel'];
 				//Deletar Fotos
 				$fotos = new Fotos();
 				$fotos->setCodigo($id);
 				$fotos->Deletar();
 
-				header('Location: /adm/?pg=adicionarfotosimovel&confirm=1&msg='.base64_encode('Foto excluida com sucesso!').'&id='.$id);
+				header('Location: /adm/?pg=adicionarfotosimovel&confirm=1&msg='.base64_encode('Foto excluida com sucesso!').'&id='.$idimovel);
 			}
 		break;
 

@@ -66,6 +66,23 @@
 			return $strCombo;
 		}
 
+		public static function getTipoImovelTxt($tipo) {
+			switch ($tipo) {
+				case '1':
+					return "Casa";
+				break;
+				case '2':
+					return "Sobrado";
+				break;
+				case '3':
+					return "Terreno";
+				break;
+				case '4':
+					return "Condominio";
+				break;
+			}
+		}
+
 		public static function getTipoNegocio($strNomeSelect = 'tiponegocio', $classe = '', $default = '') {
 			$strCombo = '
 				<select name="'.$strNomeSelect.'" '.$classe.' >
@@ -75,6 +92,20 @@
 				</select>
 			';
 			return $strCombo;
+		}
+
+		public static function getTipoNegocioTxt($tipo) {
+			switch ($tipo) {
+				case '1':
+					return "Venda";
+				break;
+				case '2':
+					return "Aluguel";
+				break;
+				case '3':
+					return "Temporada";
+				break;
+			}
 		}
 
 		//Retorna Mensagens padrões

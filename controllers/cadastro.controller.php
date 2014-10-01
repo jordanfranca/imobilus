@@ -2,7 +2,6 @@
 
 	class CadastroController extends Page{
 		public function index() {
-			$intConfirma = 0;
 			require("views/cadastro/cadastro.view.php");
 		}
 	
@@ -11,6 +10,9 @@
 		}
 		
 		public function add() {
+			//Validações de Cadastro
+			
+
 			$objCadastro = new Cadastro();
 			$objCadastro->setIntCreci($_POST['creci']);
 			$objCadastro->setStrEmail(Helpers::sha512($_POST['email']));
@@ -20,8 +22,7 @@
 				
 			$objCadastro->Inserir();
 			$objEmail = new Email();
-			$objEmail->confirmaCadastro($_POST['email'], $_POST['nome'], $strHash);
-				
+			$objEmail->confirmaCadastro($_POST['email'], $_POST['nome'], $strHash);	
 		}
 		
 		public function confirmacao() {
@@ -36,16 +37,24 @@
 			if($boolCadastro) {
 				if($objCadastro->getStrHash() == $strHash) {
 					$boolCadastro = $objCadastro->confirmaCadastro();
-					if($boolCadastro)
-						$intConfirma = 1;
-					else 
-						$intConfirma = 2;
+					if($boolCadastro) {
+						$confirm = 1;
+						$msg = base64_encode("Cadastro confirmado com sucesso!");
+					}
+					else {
+						$confirm = 2;
+						$msg = base64_encode("Ocorreu algum erro, por favor tente novamente!");
+					}
 				}
-				else 
-					$intConfirma = 2;
+				else {
+					$confirm = 2;
+					$msg = base64_encode("Ocorreu algum erro, por favor tente novamente!");
+				}
 			}
-			else 
-				$intConfirma = 3;
+			else {
+				$confirm = 2;
+				$msg = base64_encode("Cadastro não encontrado!");
+			}
 			require('views/login/login.view.php');
 		}
 		

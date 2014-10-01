@@ -1,16 +1,18 @@
 <section class="large-12 medium-12 small-12 left" id="cadastrar-main">
 	<?php 
-		switch ($intConfirma) {
-			case 1:
-				echo HTML::mesageDefault('Cadastro confirmado com sucesso!', 'sucess');
-				break;
-			case 2:
-				echo HTML::mesageDefault('Ocorreu algum erro, por favor tente novamente!', 'alert');
-				break;
-			case 3:
-				echo HTML::mesageDefault('Cadastro não encontrado!', 'alert');
-				break;
-		}
+		if(isset($_GET['confirm']) && isset($_GET['msg'])) {
+        	if($_GET['confirm'] == '1')
+              echo HTML::mesageDefault(base64_decode($_GET['msg']), 'sucess');
+            if($_GET['confirm'] == '2')
+              echo HTML::mesageDefault(base64_decode($_GET['msg']), 'alert');
+        }
+
+        if(isset($confirm) && isset($msg)) {
+        	if($confirm == '1')
+              echo HTML::mesageDefault(base64_decode($msg), 'sucess');
+            if($confirm == '2')
+              echo HTML::mesageDefault(base64_decode($msg), 'alert');
+        }
 	?>
 	<div class="row">
 		<div class="large-10 large-centered medium-12 medium-uncentered small-12 small-uncentered columns text-center" id="cadastro">
