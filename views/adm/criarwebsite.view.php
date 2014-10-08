@@ -18,7 +18,7 @@
                   <div class="panel-title"> <i class="fa fa-pencil"></i>Criar um website</div>
                 </div>
                 <div class="panel-body">
-                  <form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="/adm/funcoes.php?ac=criarwebsite">
+                  <form class="form-horizontal" role="form" method="POST"  enctype="multipart/form-data" action="/adm/funcoes.php?ac=criarwebsite">
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Titulo: </label>
                       <div class="col-lg-10">
@@ -96,7 +96,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <div class="col-md-12 text-right">
+                      <div class="col-md-12 text-right enviando">
                         <input class="submit btn btn-blue" type="submit" value="Salvar">
                       </div>
                     </div>

@@ -45,7 +45,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <div class="col-md-12 text-right">
+                      <div class="col-md-12 text-right enviando">
                         <input class="submit btn btn-blue" type="submit" value="Editar">
                       </div>
                     </div>

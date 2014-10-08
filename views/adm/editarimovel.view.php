@@ -71,11 +71,11 @@
                       <div class="col-lg-10">
                           <select name="estado" id="estados" class="form-control">
                           <?php
-                          if($bool != false){
+                          if($boolestados != false){
                             ?>
                             <option>Selecione</option>
                             <?php
-                            foreach ($bool as $array) {
+                            foreach ($boolestados as $array) {
                               ?>
                               <option value="<?php echo $array['COD_ESTADO']; ?>"><?php echo utf8_encode($array['NM_ESTADO']); ?></option>
                               <?php
@@ -88,18 +88,21 @@
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Cidade:  </label>
                       <div class="col-lg-10" id="cidade">
-                         <select class="form-control" id="cidadeselect"><option>Selecione um estado</option><option>Selecione um estado</option></select>
+                         <select class="form-control" id="cidadese"><option>Selecione um estado</option></select>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Bairro:  </label>
                       <div class="col-lg-10" id="bairro">
-                          <input type="text" id="inputStandard" value="<?php echo $imovel->getBairro(); ?>" name="bairro" class="form-control" placeholder="Digite..." required>
+                          <select name="bairro" class="form-control">
+                            <option value="<?php echo $imovel->getBairro(); ?>"><?php $bairros2 = new Bairros(); $bairros2->setCodigo($imovel->getBairro()); $bairros2->getBairro(); echo $bairros2->getNome(); ?></option>
+                          </select>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Preço:  </label>
                       <div class="col-lg-10">
+                        <input type="hidden" id="inputStandard" value="<?php echo $imovel->getBairro(); ?>" name="bairro2" class="form-control" placeholder="Digite...">
                         <input type="text" id="inputStandard" value="<?php echo $imovel->getPreco(); ?>" name="preco" class="form-control" placeholder="Digite..." required>
                       </div>
                     </div>
@@ -116,7 +119,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <div class="col-md-12 text-right">
+                      <div class="col-md-12 text-right enviando">
                         <input class="submit btn btn-blue" type="submit" value="Salvar">
                       </div>
                     </div>

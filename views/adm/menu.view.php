@@ -45,8 +45,10 @@
             
           </ul>
         </li>
+        <?php if($_SESSION['websitebool'] && $_SESSION['websiteativo'] == 1 )  { ?>
+          <li><a href="http://www.<?php echo $_SESSION['nomesubdominio']; ?>.imobilus.com.br" target="_blank"><span class="glyphicons glyphicons-direction"></span><span class="sidebar-title">Acessar Website</span></a></li>
+        <?php } ?>
         <li><a href="/adm/funcoes.php?ac=deslogar"><span class="glyphicons glyphicons-ban"></span><span class="sidebar-title">Sair</span></a></li>
-        <li><a href="/adm/?pg=template"><span class="glyphicons glyphicons-check"></span>Template</a></li>
       </ul>
     </div>
   </aside>

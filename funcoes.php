@@ -82,6 +82,7 @@
 								$objCadastro->Inserir();
 								$objEmail = new Email();
 								$objEmail->confirmaCadastro($email, $nome, $strHash);
+								header('Location: /login/&confirm=1&msg='.base64_encode("Usuário cadastrado com sucesso! Confirme seu cadastro via e-mail!"));
 							}
 						}
 					}

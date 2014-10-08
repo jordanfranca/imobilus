@@ -89,13 +89,15 @@
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Cidade:  </label>
                       <div class="col-lg-10" id="cidade">
-                         <select class="form-control" id="cidadeselect"><option>Selecione um estado</option><option>Selecione um estado</option></select>
+                         <select class="form-control" id="cidadese"><option>Selecione um estado</option></select>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Bairro:  </label>
                       <div class="col-lg-10" id="bairro">
-                          <input type="text" id="inputStandard" name="bairro" class="form-control" placeholder="Digite..." required>
+                          <select name="bairro" class="form-control">
+                            <option value="0">Selecione uma cidade</option>
+                          </select>
                       </div>
                     </div>
                     <div class="form-group">
@@ -117,7 +119,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <div class="col-md-12 text-right">
+                      <div class="col-md-12 text-right enviando">
                         <input class="submit btn btn-blue" type="submit" value="Salvar">
                       </div>
                     </div>

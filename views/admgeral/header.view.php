@@ -135,34 +135,6 @@ function verificaDesativarConta() {
   <div class="pull-left"> <a class="navbar-brand" href="dashboard.html">
     <div class="navbar-logo"><img src="/web/img/adm-images/logo.png" class="img-responsive" alt="logo" /></div>
     </a> </div>
-  <div class="pull-right header-btns">
-    <div class="btn-group user-menu">
-      <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown"> <span class="glyphicons glyphicons-user"></span> <b> <?php echo $_SESSION['nome']; ?> </b> </button>
-      <ul class="dropdown-menu checkbox-persist" role="menu">
-        <li class="menu-arrow">
-          <div class="menu-arrow-up"></div>
-        </li>
-        <li class="dropdown-header">Sua Conta<span class="pull-right glyphicons glyphicons-user"></span></li>
-        <li>
-          <ul class="dropdown-items">
-            <?php if($_SESSION['websitebool'] && $_SESSION['websiteativo'] == 1)  { ?>
-            <li>
-              <div class="item-icon"><i class="glyphicons glyphicon-plus"></i> </div>
-              <a class="item-message" href="/adm/?pg=adicionarimovel">Adicionar Imóvel</a> </li>
-            <li>
-              <div class="item-icon"><i class="glyphicons glyphicons-imac"></i> </div>
-              <a class="item-message" href="/adm/?pg=editarwebsite">Editar Website</a> </li>
-            <?php } ?>
-            <li class="border-bottom-none">
-              <div class="item-icon"><i class="fa fa-cog"></i> </div>
-              <a class="item-message" href="/adm/?pg=editarconta">Editar Conta</a></li>
-            <li class="padding-none">
-              <div class="dropdown-signout"><i class="fa fa-sign-out"></i> <a href="/adm/funcoes.php?ac=deslogar">Sair</a></div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
   </div>
 </header>
 <!-- End: Header --> 

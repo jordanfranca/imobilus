@@ -18,6 +18,7 @@ require("../models/Imovel.model.php");
 require("../models/Estados.model.php");
 require("../models/Cidades.model.php");
 require("../models/Bairros.model.php");
+require("../models/Subdominio.model.php");
 require("../models/Fotos.model.php");
 require("../etc/helpers/Helpers.class.php");
 require("../etc/class/Email.class.php");
@@ -51,6 +52,13 @@ else {
 	$_SESSION['websitebool'] = $website->getWebsite();
 	$_SESSION['codigowebsite']  = $website->getCodigo();
 	$_SESSION['websiteativo'] = $website->getAtivo();
+
+	if($_SESSION['websitebool'] && $_SESSION['websiteativo'] == 1 ) {
+		$subdominio = new SubdominioModel();
+		$subdominio->setCodigo($website->getSubdominio());
+		$subdominio->getSubdominio();
+		$_SESSION['nomesubdominio'] = $subdominio->getDescricao();
+	}
 
 	//Header
 	require("../views/adm/header.view.php");

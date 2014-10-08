@@ -151,6 +151,16 @@
 				return false;
 		}
 
+		public function getImoveisBusca($query) {
+			$objConexao = Imovel::getConexao();
+			$objConsulta = $objConexao->prepare($query);
+			$objRetorno = parent::Read($objConsulta);
+			if($objRetorno->rowCount() > 0)
+				return $objRetorno;
+			else
+				return false;
+		}
+
 		public function getImoveisQt($qt) {
 			$objConexao = Imovel::getConexao();
 			$objConsulta = $objConexao->prepare("SELECT  

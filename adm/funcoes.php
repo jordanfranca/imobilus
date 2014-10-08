@@ -135,6 +135,9 @@
 				$canvas->grava("../web/storage/imoveis/mini-imovel/".$refoto."", 100);
 				$canvas->resetar();	
 
+				//Retirar R$ do Preço
+				$preco = str_replace("R$", "", $preco);
+
 				//Imovel
 				$imovel = new Imovel();
 				$imovel->setReferencia($referencia);
@@ -245,6 +248,11 @@
 				$descricao = $_POST['descricao'];
 				$foto = $_FILES['foto'];
 				$id = (int)$_GET['id'];
+
+				if($bairro == 0) {
+					$bairro = $_POST['bairro2'];
+				}
+
 				//Faz Foto Do site
 				if($_FILES['foto']['tmp_name'] == '') 
 					$refoto = base64_decode($_GET['foto']);
@@ -268,6 +276,9 @@
 					$canvas->grava("../web/storage/imoveis/mini-imovel/".$refoto."", 100);
 					$canvas->resetar();	
 				}
+
+				//Retirar R$ do Preço
+				$preco = str_replace("R$ ", "", $preco);
 
 				//Imovel
 				$imovel = new Imovel();
@@ -685,7 +696,7 @@
 					fclose($fp);
 					
 					//Mensagem para o usuario
-					$msg = base64_encode("Website criado com sucesso!");
+					$msg = base64_encode("Website criado com sucesso! Em instantes ele estara disponivel em <a href='http://'".$subdominiotxt.".imobilus.com.br'>http://'".$subdominiotxt.".imobilus.com.br</a>");
 					header('Location: /adm/?pg=painel&confirm=1&msg='.$msg);
 				}
 			}
@@ -826,81 +837,6 @@
 			}
 		break;
 
-
-		case 'adicionartemplate':
-			//Valida posts
-			$boolPosts = false;
-			$msgErro   = 'Ocorreu um erro ao enviar o formulário por favor preencha o(s) campo(s) obrigatório(s) : ';
-
-			//Pegando get de post
-			if(!(isset($_POST['nome']))) {
-				$msgErro .= 'Nome, ';
-				$boolPosts = true;
-			}
-				
-			if(!(isset($_POST['versao']))) {
-				$msgErro .= 'Versão, ';
-				$boolPosts = true;
-			}
-				
-			if($_FILES['zip']['tmp_name'] == '') {
-				$msgErro .= 'Arquivo .zip, ';
-				$boolPosts = true;
-			}
-				
-			if($_FILES['miniatura']['tmp_name'] == '' ) {
-				$msgErro .= 'Miniatura do template, ';
-				$boolPosts = true;
-			}
-				
-			if(!(isset($_POST['ativo']))) {
-				$msgErro .= 'Ativo ';
-				$boolPosts = true;
-			}
-
-			if($boolPosts)
-				header('Location: /adm/?pg=template&confirm=2&msg='.base64_encode($msgErro));
-
-			else {
-				//Get Posts
-				$nome = $_POST['nome'];
-				$versao = $_POST['versao'];
-				$zip = $_FILES['zip'];
-				$miniatura = $_FILES['miniatura'];
-				$ativo = $_POST['ativo'];
-				
-				//Novo nome para template
-				$novonome = Helpers::sha512($zip['name'].date('D/M/Y hh:mm:ss'));
-				if(!move_uploaded_file($zip['tmp_name'], '../templates/zip/'.$novonome.'.zip')) {
-					$msg = base64_encode("Ocorreu um erro ao adicionar um novo template, tente novamente!");
-					header('Location: /adm/?pg=template&confirm=2&msg='.$msg);
-				}
-					
-				//Miniatura
-				$relogo = Helpers::fotos($miniatura, 150, "../templates/miniaturas", 'template');
-				$canvas = new Canvas();
-
-				//Miniatura
-				$canvas->carrega("../templates/miniaturas/".$relogo."");
-				$canvas->redimensiona(150,150,'crop');
-				$canvas->grava("../templates/miniaturas/".$relogo."", 100);
-				$canvas->resetar();	
-				
-				$template = new Template();
-				$template->setNome($nome);
-				$template->setVersao($versao);
-				$template->setPasta($novonome.'.zip');
-				$template->setMiniatura($relogo);
-				$template->setAtivo($ativo);
-
-				$template->Adicionar();
-
-				//Mensagem para o usuário
-				$msg = base64_encode("Tempalte adicionado com sucesso!");
-				header('Location: /adm/?pg=template&confirm=1&msg='.$msg);
-			}
-		break;
-
 		//Desativar Site
 		case 'desativarsite':
 			$website = new Website();
@@ -921,39 +857,7 @@
 			header('Location: /adm/?pg=painel&confirm=1&msg='.$msg);
 		break;
 
-		//Desativar Template
-		case 'desativartemplate':
-			$template = new Template();
-			if(!(isset($_GET['id']))) {
-				$msg = base64_encode("Ocorreu um erro ao tentar desativar o template, tente novamente!");
-				header('Location: /adm/?pg=template&confirm=2&msg='.$msg);
-			}
-			else {
-				$id = (int) $_GET['id'];
-				$template->setCodigo($id);
-				$template->desativarTemplate();
 
-				$msg = base64_encode("Template desativado com sucesso!");
-				header('Location: /adm/?pg=template&confirm=1&msg='.$msg);
-			}
-		break;
-
-		//Ativar Template
-		case 'ativartemplate':
-			$template = new Template();
-			if(!(isset($_GET['id']))) {
-				$msg = base64_encode("Ocorreu um erro ao tentar ativar o template, tente novamente!");
-				header('Location: /adm/?pg=template&confirm=2&msg='.$msg);
-			}
-			else {
-				$id = (int) $_GET['id'];
-				$template->setCodigo($id);
-				$template->ativarTemplate();
-
-				$msg = base64_encode("Template ativado com sucesso");
-				header('Location: /adm/?pg=template&confirm=1&msg='.$msg);
-			}
-		break;
 
 		//Get Cidades
 		case 'getcidades':

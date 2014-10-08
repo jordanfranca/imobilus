@@ -42,6 +42,10 @@
 			$imovel->setCodigo($id);
 
 			$bool = $imovel->getImoveisID();
+
+			$estado = new Estados();
+            $boolestados = $estado->getEstados();
+
 			if($bool != false)
 				require("../views/adm/editarimovel.view.php");
 			else
@@ -71,11 +75,7 @@
 				self::error();
 		}
 
-		public function template() {
-			$template = new Template();
-			$templates = $template->getTemplates();
-			require("../views/adm/template.view.php");
-		}
+		
 
 		public function editarconta() {
 			$objUsuario = new Cadastro();
@@ -93,6 +93,21 @@
 		
 		public function error() {
 			require("../views/adm/erro.view.php");
+		}
+
+		//Funcoes para ADM GERAL
+		public function logingeral() {
+			require("../views/admgeral/login.view.php");
+		}
+
+		public function painelgeral() {
+			self::template();
+		}
+
+		public function template() {
+			$template = new Template();
+			$templates = $template->getTemplates();
+			require("../views/admgeral/template.view.php");
 		}
 	}
 	

@@ -57,6 +57,7 @@
 		public static function getTipoImovel($strNomeSelect = 'tipoimovel', $classe = '', $default = '') {
 			$strCombo = '
 				<select name="'.$strNomeSelect.'" '.$classe.' >
+					<option value="0">Selecione</option>
 					<option value="1" '.($default == 1 ? 'selected' : ' ') .'>Casa</option>
 					<option value="2" '.($default == 2 ? 'selected' : ' ') .'>Sobrado</option>
 					<option value="3" '.($default == 3 ? 'selected' : ' ') .'>Terreno</option>
@@ -86,6 +87,7 @@
 		public static function getTipoNegocio($strNomeSelect = 'tiponegocio', $classe = '', $default = '') {
 			$strCombo = '
 				<select name="'.$strNomeSelect.'" '.$classe.' >
+					<option value="0">Selecione</option>
 					<option value="1" '.($default == 1 ? 'selected' : ' ') .'>Venda</option>
 					<option value="2" '.($default == 2 ? 'selected' : ' ') .'>Aluguel</option>
 					<option value="3" '.($default == 3 ? 'selected' : ' ') .'>Temporada</option>
@@ -144,7 +146,6 @@
 			$obj->setEstado($estado);
 			$bool = $obj->getCidades();
 			$obj->__destruct();
-			$select = '<select id="cidadese" name="'.$strNomeSelect.'" '.$classe.'>';
 			if($bool != false) {
 				$select .= '<option value="0" >Selecione</option>';
 				foreach ($bool as $array) {
@@ -155,7 +156,6 @@
 			}
 			else {
 				$select .= '<option value="0">Selecione um estado</option>';
-				$select .= "</select>";
 				return $select;
 			}
 		}
@@ -167,6 +167,7 @@
 			$bool = $bairro->getBairros();
 			$select = '<select name="'.$strNomeSelect.'" '.$classe.'>';
 			if($bool != false) {
+				$select .= '<option value="0">Selecione</option>';
 				foreach ($bool as $array) {
 					$select .= '<option value="'.$array['COD_BAIRRO'].'">'.utf8_encode($array['NM_BAIRRO']).' </option>';
 				}

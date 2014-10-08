@@ -80,13 +80,13 @@
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Publicado:  </label>
                       <div class="col-lg-10">
+                        <input type="hidden" name="templateatual" class="form-control colorpicker margin-top-none" id="cp" placeholder="#37a8e8" value="<?php echo $website->getTemplate(); ?>">
+                        <input type="hidden" name="logoatual" class="form-control colorpicker margin-top-none" id="cp" placeholder="#37a8e8" value="<?php echo $website->getLogo(); ?>">
                         <?php echo HTML::optionTrueFalse('publicado', 'class="form-control"', $website->getPublicado()); ?>
                       </div>
                     </div>
                     <div class="form-group">
-                      <div class="col-md-12 text-right">
-                        <input type="hidden" name="templateatual" class="form-control colorpicker margin-top-none" id="cp" placeholder="#37a8e8" value="<?php echo $website->getTemplate(); ?>">
-                        <input type="hidden" name="logoatual" class="form-control colorpicker margin-top-none" id="cp" placeholder="#37a8e8" value="<?php echo $website->getLogo(); ?>">
+                      <div class="col-md-12 text-right enviando">
                         <input class="submit btn btn-blue" type="submit" value="Atualizar">
                       </div>
                     </div>
