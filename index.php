@@ -9,6 +9,7 @@
 	require("etc/phpmailer/smtp.inc.php");
 	require("controllers/page.controller.php");
 	require("etc/helpers/HTML.class.php");
+	require("models/Template.model.php");
 	
 	//Conexão
 	$objConexao = new Conexao();
@@ -19,7 +20,7 @@
 
 	//Logica das páginas
 	$strAtual       = (isset($_GET['pg'])) ? $_GET['pg'] : 'home';
-	$arrPermissao   = array('home', 'cadastro', 'login');
+	$arrPermissao   = array('home', 'cadastro', 'login', 'template');
 	$strPasta       = 'controllers';
 	if(substr_count($strAtual, '/') > 0) {
 		$strAtual   = explode('/',$strAtual);

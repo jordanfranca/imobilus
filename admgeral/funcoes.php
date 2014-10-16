@@ -75,12 +75,12 @@
 				}
 					
 				//Miniatura
-				$relogo = Helpers::fotos($miniatura, 150, "../templates/miniaturas", 'template');
+				$relogo = Helpers::fotos($miniatura, 500, "../templates/miniaturas", 'template');
 				$canvas = new Canvas();
 
 				//Miniatura
 				$canvas->carrega("../templates/miniaturas/".$relogo."");
-				$canvas->redimensiona(150,150,'crop');
+				$canvas->redimensiona(500,700,'crop');
 				$canvas->grava("../templates/miniaturas/".$relogo."", 100);
 				$canvas->resetar();	
 				

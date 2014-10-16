@@ -41,7 +41,7 @@
                     <ul>
                         <li><a href="/home">Home</a><span></span></li>
                         <li><a href="/cadastro">Cadastro</a><span></span></li>
-                        <li><a href="">Templates</a><span></span></li>
+                        <li><a href="/template">Templates</a><span></span></li>
                         <li><a href="">Contato</a><span></span></li>
                         <li><a href="/login">Acessar</a><span></span></li>
                     </ul>

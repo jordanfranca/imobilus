@@ -69,10 +69,10 @@
                             foreach ($templates as $array) {
                               if($array['IND_ATIVO'] == 1) {
                         ?>
-                        <div class="col-md-3 text-center">
+                        <div class="col-md-6 text-center">
                             <input type="radio" name="template" id="yes" value="<?php echo $array['COD_TEMPLATE']; ?>" <?php if($array['COD_TEMPLATE'] == $website->getTemplate()) { echo " checked "; } ?> />
                             <label for="yes"><?php echo $array['NOM_TEMPLATE']; ?></label>
-                            <div class="img-template"><img src="/templates/miniaturas/<?php echo $array['DSC_MINIATURA']; ?>" /></div>
+                            <div class="img-template"><img src="/templates/miniaturas/<?php echo $array['DSC_MINIATURA']; ?>" width="100%" /></div>
                         </div>
                         <?php }}} ?>
                         </div>
