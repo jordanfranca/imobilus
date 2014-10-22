@@ -27,25 +27,29 @@
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Quartos: </label>
                       <div class="col-lg-10">
-                        <?php echo HTML::getQuantidades('quartos', 'class="form-control"', 10, $imovel->getQuartos()); ?>
+                        <?php //echo HTML::getQuantidades('quartos', 'class="form-control"', 10, $imovel->getQuartos()); ?>
+                        <input type="text" name="quartos" value="<?php echo $imovel->getQuartos(); ?>" class="form-control spinner" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Salas:  </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('salas', 'class="form-control"', 10, $imovel->getSalas()); ?>
+                         <?php //echo HTML::getQuantidades('salas', 'class="form-control"', 10, $imovel->getSalas()); ?>
+                         <input type="text" name="salas" value="<?php echo $imovel->getSalas(); ?>" class="form-control spinner" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Banheiros: </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('banheiros', 'class="form-control"', 10, $imovel->getBanheiros()); ?>
+                         <?php //echo HTML::getQuantidades('banheiros', 'class="form-control"', 10, $imovel->getBanheiros()); ?>
+                         <input type="text" name="banheiros" value="<?php echo $imovel->getBanheiros(); ?>" class="form-control spinner" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Dormitórios:  </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('dormitorios', 'class="form-control"', 10, $imovel->getDormitorios()); ?>
+                         <?php //echo HTML::getQuantidades('dormitorios', 'class="form-control"', 10, $imovel->getDormitorios()); ?>
+                         <input type="text" name="dormitorios" value="<?php echo $imovel->getDormitorios(); ?>" class="form-control spinner" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">

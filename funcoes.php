@@ -6,7 +6,6 @@
 	require("etc/helpers/Helpers.class.php");
 	require("etc/class/Email.class.php");
 	require("etc/phpmailer/phpmailer.inc.php");
-	require("etc/phpmailer/smtp.inc.php");
 	require("controllers/page.controller.php");
 	require("etc/helpers/HTML.class.php");
 	
@@ -64,7 +63,7 @@
 						header('Location: /cadastro/&confirm=2&msg='.base64_encode("Digite a senha corretamente nos campos Senha e Repita a senha!"));
 					else {
 						$objCadastro = new Cadastro();
-						$objCadastro->setStrEmail(Helpers::sha512($email));
+						$objCadastro->setStrEmail(base64_encode($email));
 						$boolemail = $objCadastro->getCadastroByEmail();
 						if($boolemail)
 							header('Location: /cadastro/&confirm=2&msg='.base64_encode("E-mail já cadastrado no sistema, por favor tente novamente!"));
@@ -74,7 +73,7 @@
 							else {
 								//Adiciona usuário
 								$objCadastro->setIntCreci($creci);
-								$objCadastro->setStrEmail(Helpers::sha512($email));
+								$objCadastro->setStrEmail(base64_encode($email));
 								$objCadastro->setStrNome($nome);
 								$objCadastro->setStrSenha(Helpers::sha512($senha));
 								$objCadastro->setStrHash($strHash = Helpers::sha512(Helpers::geraSenha()));
@@ -84,6 +83,36 @@
 								$objEmail->confirmaCadastro($email, $nome, $strHash);
 								header('Location: /login/&confirm=1&msg='.base64_encode("Usuário cadastrado com sucesso! Confirme seu cadastro via e-mail!"));
 							}
+						}
+					}
+				}
+			break;
+
+			case 'recuperarsenha':
+				//Valida posts
+				$boolPosts = false;
+				$msgErro   = 'Ocorreu um erro ao enviar o formulário por favor preencha o(s) campo(s) obrigatório(s) : ';
+				if($_POST['email'] == '') {
+					$msgErro .= 'E-mail';
+					$boolPosts = true;
+				}
+
+				if($boolPosts)
+					header('Location: /cadastro/recuperarsenha/&confirm=2&msg='.base64_encode($msgErro));
+				else {
+					$email = $_POST['email'];
+					if(!(Helpers::validaemail($email))) 
+						header('Location: /cadastro/&confirm=2&msg='.base64_encode("Digite um e-mail válido"));
+					else {
+						$objCadastro = new Cadastro();
+						$objCadastro->setStrEmail(base64_encode($email));
+						$boolemail = $objCadastro->getCadastroByEmail();
+						if($boolemail == false)
+								header('Location: /cadastro/recuperarsenha/&confirm=2&msg='.base64_encode("E-mail não encontrado no sistema!"));
+						else {
+							$objEmail = new Email();	
+							$objEmail->recuperarSenha($email, $objCadastro->getStrNome(), $objCadastro->getStrHash());
+							header('Location: /login/&confirm=1&msg='.base64_encode("Um e-mail para recuperação de senha foi enviado!"));
 						}
 					}
 				}

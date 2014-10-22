@@ -79,7 +79,7 @@
 
 		/* Helper para fotos */
 		public static function fotos($foto, $tamanho, $pasta, $pagina = 'painel') {
-			$permissao = array('image/jpeg', 'image/jpg');
+			$permissao = array('image/jpeg', 'image/jpg', 'image/png', 'image/x-png','image/gif');
 			$fotos = $foto;
 			if(in_array($fotos['type'], $permissao)){
 			   $name_thumb = md5(uniqid(rand(), true)); 
@@ -91,7 +91,7 @@
 			   return $newName;
 			 }
 			 else {
-			 	$msg = base64_encode("São aceitas apenas imagens no formato .jpg para o site, tente novamente!");
+			 	$msg = base64_encode("São aceitas apenas imagens no formato .jpg, .png e .gif para o site, tente novamente!");
 				header("Location: /adm/?pg=".$pagina."&confirm=2&msg=".$msg);
 			 }
 		}		
@@ -109,7 +109,6 @@
 				switch($type){
 					case 3:
 						imagesavealpha($nova, true);
-
 						$trans_colour = imagecolorallocatealpha($nova, 0, 0, 0, 127);
 						imagefill($nova, 0, 0, $trans_colour);
 					   

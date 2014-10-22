@@ -14,11 +14,8 @@
 	//Metodos de Seguranca
 	$login = Helpers::escapeString($login);
 	$senha = Helpers::escapeString($senha);
-	//Hash e Salt
-	$login = $login;
-	$senha = $senha;
 	
-	$login = Helpers::sha512($login);
+	$login = base64_encode($login);
 	$senha = Helpers::sha512($senha);
 
 	$pagina = "/adm/?pg=painel";

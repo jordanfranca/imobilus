@@ -32,7 +32,7 @@
 			
 			//Obj de Cadastro
 			$objCadastro = new Cadastro();
-			$objCadastro->setStrEmail(Helpers::sha512($strEmail));
+			$objCadastro->setStrEmail(base64_encode($strEmail));
 			$boolCadastro = $objCadastro->getCadastroByEmail();
 			if($boolCadastro) {
 				if($objCadastro->getStrHash() == $strHash) {
@@ -64,6 +64,10 @@
 			$objCadastro->getCadastro();
 		}
 		
+		public function recuperarsenha() {
+			require('views/cadastro/recuperarsenha.view.php');
+		}
+
 	}
 	
 	//Verifica Metodo na classe

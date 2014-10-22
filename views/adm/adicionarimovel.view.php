@@ -28,25 +28,29 @@
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Quartos: </label>
                       <div class="col-lg-10">
-                        <?php echo HTML::getQuantidades('quartos', 'class="form-control"'); ?>
+                        <?php //echo HTML::getQuantidades('quartos', 'class="form-control"'); ?>
+                        <input type="text" name="quartos" value="0" class="form-control spinner" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Salas:  </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('salas', 'class="form-control"'); ?>
+                         <?php //echo HTML::getQuantidades('salas', 'class="form-control"'); ?>
+                         <input type="text" name="salas" value="0" class="form-control spinner" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Banheiros: </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('banheiros', 'class="form-control"'); ?>
+                         <?php //echo HTML::getQuantidades('banheiros', 'class="form-control"'); ?>
+                         <input type="text" name="banheiros" value="0" class="form-control spinner" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="inputStandard" class="col-lg-2 control-label">Dormitórios:  </label>
                       <div class="col-lg-10">
-                         <?php echo HTML::getQuantidades('dormitorios', 'class="form-control"'); ?>
+                         <?php //echo HTML::getQuantidades('dormitorios', 'class="form-control"'); ?>
+                         <input type="text" name="dormitorios" value="0" class="form-control spinner" placeholder="" required>
                       </div>
                     </div>
                     <div class="form-group">

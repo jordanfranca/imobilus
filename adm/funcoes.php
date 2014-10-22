@@ -631,9 +631,7 @@
 					header('Location: /adm/?pg=criarwebsite&confirm=2&msg='.$msg);
 				}
 				else {
-					$subdominio->Inserir();
-					$subdominio->getVerificarSubdominio();
-
+					
 					//Logo
 					$relogo = Helpers::fotos($logo, 200, "../web/storage/logo", 'criarwebsite');
 					$canvas = new Canvas();
@@ -643,6 +641,10 @@
 					$canvas->redimensiona(200,150,'crop');
 					$canvas->grava("../web/storage/logo/".$relogo."", 100);
 					$canvas->resetar();	
+
+					//Criar Subdominio
+					$subdominio->Inserir();
+					$subdominio->getVerificarSubdominio();
 
 					//Website
 					$website = new Website();
@@ -696,7 +698,7 @@
 					fclose($fp);
 					
 					//Mensagem para o usuario
-					$msg = base64_encode("Website criado com sucesso! Em instantes ele estara disponivel em <a href='http://'".$subdominiotxt.".imobilus.com.br'>http://'".$subdominiotxt.".imobilus.com.br</a>");
+					$msg = base64_encode("Website criado com sucesso! Em instantes ele estara disponivel em <a href='http://".$subdominiotxt.".imobilus.com.br'>http://'".$subdominiotxt.".imobilus.com.br</a>");
 					header('Location: /adm/?pg=painel&confirm=1&msg='.$msg);
 				}
 			}

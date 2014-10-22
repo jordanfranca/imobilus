@@ -10,7 +10,7 @@
 		}
 		
 		public function confirmaCadastro($strEmail, $strNome, $hash) {
-			$strDe = "jordan1992_16@hotmail.com";
+			$strDe = "contato@imobilus.com.br";
 			$strAssunto = "Confirmação de Cadastro - Imobilus";
 			
 			$strMensagem = "
@@ -22,6 +22,32 @@
 				<a href='http://www.imobilus.com.br/cadastro/confirmacao/&cod=$hash&email=$strEmail'>http://www.imobilus.com.br/cadastro/confirmacao/&cod=$hash&email=$strEmail</a><br />
 				
 				Obrigado!
+				<br />
+				-----------------------------------------------------------------------------------------------------------
+				<br />
+				Equipe Imobilus
+			";
+			self::enviarEmail($strDe, utf8_decode($strAssunto), $strNome, utf8_decode($strMensagem), $strEmail);	
+		}
+
+		public function recuperarSenha($strEmail, $strNome, $hash) {
+			$strDe = "contato@imobilus.com.br";
+			$strAssunto = "Recuperação de senha - Imobilus";
+			
+			$strMensagem = "
+				Olá, <br />
+				
+				Você acaba de solicitar sua recuperação de senha, por favor clique no link abaixo e siga as instruções
+				acesse o link abaixo:<br />
+				
+				<a href='http://www.imobilus.com.br/cadastro/recuperarsenhaform/&cod=$hash&email=$strEmail'>http://www.imobilus.com.br/cadastro/recuperarsenhaform/&cod=$hash&email=$strEmail</a><br />
+				<br />
+				Obrigado!
+				<br />
+				-----------------------------------------------------------------------------------------------------------
+				<br />
+				Equipe Imobilus
+
 			";
 			self::enviarEmail($strDe, utf8_decode($strAssunto), $strNome, utf8_decode($strMensagem), $strEmail);	
 		}
@@ -39,8 +65,6 @@
 			$this->objPHPMailer->IsHTML(true);
 			$this->objPHPMailer->Body = $strMensagem;
 			$this->objPHPMailer->Send();
-			
-			echo 'E-mail enviado';
 		}
 		
 		

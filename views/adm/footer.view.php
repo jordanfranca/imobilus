@@ -51,6 +51,25 @@
     $('.colorpicker').colorpicker();
     $(".radio").uniform();
     $(".checkbox").uniform();
+    $(".spinner").spinner({
+      min: 0,
+      max: 30,
+    });
+
+
+    $('.spinner').on('keyup', function(e) {
+      var v = parseInt($(this).val());
+      if (isNaN(v)) {
+         return $(this).val(0);
+      }
+      if ($(this).val() <0) {
+         $(this).val(0);
+      } else if ($(this).val() > 30) {
+         $(this).val(30); 
+      } else {
+         $(this).val(v);
+      }
+    });
 
     //Mascaras
     $('input[name="referencia"]').mask("9?99999999");
